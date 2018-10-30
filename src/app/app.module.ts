@@ -12,13 +12,19 @@ import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { ProductsPageComponent } from "./products-page/products-page.component";
 import { UserPageComponent } from "./user-page/user-page.component";
+import { AdminComponent } from './admin/admin.component';
+import { AuthComponent } from './auth/auth.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ProductsPageComponent,
-    UserPageComponent
+    UserPageComponent,
+    AdminComponent,
+    AuthComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
