@@ -7,7 +7,7 @@
   <input type="submit" value="Search" class="button">
 </form>
 
-<div *ngFor='let item of items'>
+<div class="products" *ngFor='let item of items'>
   <ul>
     <li>{{ item.name }}</li>
     <li>
@@ -22,7 +22,7 @@
     <li>{{item.locations[0].id}}</li>
     <li> {{item.locations[0].url }}</li>
     <li>
-      <img src='{{item.locations.id }}' />
+      <img src='{{item.locations[0].icon }}' />
     </li>
-  </ul>{{item | json }}
+  </ul>
 </div>
