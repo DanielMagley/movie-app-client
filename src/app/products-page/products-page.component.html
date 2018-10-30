@@ -1,0 +1,28 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+
+  <label>
+    <input type="text" formControlName='input'>
+  </label>
+  <input type="submit" value="Search" class="button">
+</form>
+
+<div *ngFor='let item of items'>
+  <ul>
+    <li>{{ item.name }}</li>
+    <li>
+      <img src='{{ item.picture }}' height="250px" width="250px" />
+    </li>
+    <!-- <li>{{ item.locations.display_name}}</li>
+    <li>{{ item.locations.url }}</li>
+    <li> {{item.locations.icon }}</li> -->
+
+
+    <li>{{item.locations[0].display_name}}</li>
+    <li>{{item.locations[0].id}}</li>
+    <li> {{item.locations[0].url }}</li>
+    <li>
+      <img src='{{item.locations.id }}' />
+    </li>
+  </ul>{{item | json }}
+</div>
