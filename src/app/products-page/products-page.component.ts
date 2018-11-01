@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, FormControl } from "@angular/forms";
 import { DataService } from "../data.service";
+import { of } from "rxjs";
 
 @Component({
   selector: "app-products-page",
@@ -13,6 +14,7 @@ export class ProductsPageComponent {
   });
   locationArr;
   result;
+  addOne;
   items;
   itemsArr;
   constructor(private service: DataService) {}
@@ -25,14 +27,10 @@ export class ProductsPageComponent {
     this.result = this.service.getStuff(text).subscribe(data => {
       this.itemsArr = data;
       this.items = this.itemsArr.results;
-      for (let i in this.items) {
-      }
-      console.log(this.locationArr);
+
+      // console.log(this.locationArr);
 
       console.log(this.items);
-      // console.log(this.items[i].locations[i].display_name);
     });
   }
-
-  getLocations(items) {}
 }
