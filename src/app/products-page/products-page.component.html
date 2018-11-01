@@ -7,22 +7,27 @@
   <input type="submit" value="Search" class="button">
 </form>
 
-<div class="products" *ngFor='let item of items'>
-  <ul>
-    <li>{{ item.name }}</li>
-    <li>
-      <img src='{{ item.picture }}' height="250px" width="250px" />
-    </li>
-    <!-- <li>{{ item.locations.display_name}}</li>
-    <li>{{ item.locations.url }}</li>
-    <li> {{item.locations.icon }}</li> -->
+<div class="shows">
+  <div *ngFor='let item of items'>
+    <div class="list">
+      <img class='cover' src='{{ item.picture }}' />
+      <div class='middle'>
 
+        <div class='text'>
+          <button><i class="material-icons icon">
+              add_circle_outline
+            </i></button>
+          <p>Add to List</p>
+        </div>
+      </div>
+    </div>
+    <h2>{{ item.name }}</h2>
 
-    <li>{{item.locations[0].display_name}}</li>
-    <li>{{item.locations[0].id}}</li>
-    <li> {{item.locations[0].url }}</li>
-    <li>
-      <img src='{{item.locations[0].icon }}' />
-    </li>
-  </ul>
+    <!-- <div > -->
+    <a *ngFor="let loco of item.locations" href="{{loco.url}}">
+      <img src='{{loco.icon}}' />
+    </a>
+
+    <!-- </div> -->
+  </div>
 </div>
