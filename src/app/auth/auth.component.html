@@ -1,3 +1,15 @@
-<p>
-  auth works!
-</p>
+<h1>Sign In</h1>
+<form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+
+  <label>
+    Email
+    <input type="email" formControlName="email" [(ngModel)]="userEmail">
+  </label>
+
+  <label>
+    Password
+    <input type='password' formControlName="password" [(ngModel)]="password">
+  </label>
+
+  <input type="submit" value="Submit" class="button">
+</form>
