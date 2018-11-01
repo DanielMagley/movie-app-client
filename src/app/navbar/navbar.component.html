@@ -2,11 +2,12 @@
 
 
   <mat-toolbar-row>
-    <span>Third Line</span>
+    <button mat-menu-item class="product-page"><a routerLink="">Third
+        Line</a></button>
     <span class="example-spacer"></span>
     <mat-icon class="example-icon" [matMenuTriggerFor]="menu">menu</mat-icon>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item><a routerLink="/auth">Sign In</a></button>
       <button mat-menu-item>Item 2</button>
       <button mat-menu-item routerLink="/user-page">Watch List</button>
     </mat-menu>
