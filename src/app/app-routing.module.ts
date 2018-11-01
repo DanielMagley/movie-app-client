@@ -7,8 +7,8 @@ import { AuthComponent } from "./auth/auth.component";
 import { HomePageComponent } from "./home-page/home-page.component";
 
 const routes: Routes = [
-  { path: "home", component: HomePageComponent },
-  { path: "product-page", component: ProductsPageComponent },
+  //{ path: "home", component: HomePageComponent },
+  { path: "", component: ProductsPageComponent },
   { path: "user-page", component: UserPageComponent },
   { path: "auth", component: AuthComponent },
   { path: "admin", component: AdminComponent }
