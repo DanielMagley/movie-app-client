@@ -12,4 +12,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  logout(){
+    sessionStorage.clear()
+    window.location.href = "/";
+  }
+
 }

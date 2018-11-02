@@ -1,3 +1,9 @@
-<p>
-  admin works!
-</p>
+<ul>
+  <li *ngFor="let user of users">
+    {{user.id}}
+    {{user.firstName}}
+    {{user.lastName}}
+    {{user.userEmail}}
+    <button (click)="deleteUser(user.id)">Delete</button>
+  </li>
+</ul>

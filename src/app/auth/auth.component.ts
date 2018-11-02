@@ -36,4 +36,4 @@ export class AuthComponent implements OnInit {
       window.location.href = "/user-page";
     });
   }
-}
+} 
