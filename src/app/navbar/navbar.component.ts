@@ -17,4 +17,12 @@ export class NavbarComponent implements OnInit {
     window.location.href = "/";
   }
 
+  adminPage() {
+    if(sessionStorage.getItem('isAdmin') === 'true') {
+      window.location.href = "/admin";
+    } else {
+      window.location.href = "/";
+    }
+  }
+
 }
