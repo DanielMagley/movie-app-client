@@ -9,8 +9,12 @@ import { AuthService } from "../auth.service";
 })
 export class AuthComponent implements OnInit {
   signInForm: FormGroup;
+
   userEmail: string;
   password: string;
+  firstName: string;
+  lastName: string;
+  signUp = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -24,13 +28,12 @@ export class AuthComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  onSignInSubmit() {
     this.authService.signIn(this.userEmail, this.password).subscribe(user => {
       sessionStorage.setItem("token", user.sessionToken);
+      sessionStorage.setItem("isAdmin", user.isAdmin);
       alert(user.message);
       window.location.href = "/user-page";
     });
-
-    console.log(this.userEmail, this.password);
   }
 }

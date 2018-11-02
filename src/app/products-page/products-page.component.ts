@@ -23,14 +23,11 @@ export class ProductsPageComponent {
 
   onSubmit() {
     let text = this.form.value.input;
-    // let cat = this.form.value.categories;
+
     this.result = this.service.getStuff(text).subscribe(data => {
       this.itemsArr = data;
       this.items = this.itemsArr.results;
-
-      // console.log(this.locationArr);
-
-      console.log(this.items);
+      // console.log(this.items);
     });
   }
 }

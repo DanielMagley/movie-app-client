@@ -18,6 +18,7 @@ import { AuthComponent } from "./auth/auth.component";
 import { HomePageComponent } from "./home-page/home-page.component";
 import { AuthService } from "./auth.service";
 import { AuthGuardService } from "./auth-guard.service";
+import { SignupComponent } from './signup/signup.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -31,7 +32,8 @@ export function tokenGetter() {
     UserPageComponent,
     AdminComponent,
     AuthComponent,
-    HomePageComponent
+    HomePageComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
