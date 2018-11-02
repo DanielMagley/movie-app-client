@@ -1,7 +1,9 @@
-<ul>
-  <li *ngFor="let return of returns">
-   <img src='{{return.movieImage}}' height='250px' width='250px'>
-   <button (click)="deleteItem(return.id)">Delete</button>
-   <button (click)="updateItem(return.id, return.movieImage)">Watched</button>
-  </li>
-</ul>
+
+  <ul>
+    <li *ngFor="let return of returns">
+    <img src='{{return.movieImage}}' height='250px' width='250px'>
+    <button (click)="deleteItem(return.id)">Delete</button>
+    <button (click)="updateItem(return.id, return.movieImage)">Watched</button>
+    </li>
+  </ul>
+
