@@ -5,4 +5,5 @@ export class UserSignIn {
   passwordhash: string;
   message: string;
   sessionToken: string;
+  isAdmin: string;
 }

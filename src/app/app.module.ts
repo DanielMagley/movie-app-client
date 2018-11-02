@@ -18,6 +18,9 @@ import { AuthComponent } from "./auth/auth.component";
 import { HomePageComponent } from "./home-page/home-page.component";
 import { AuthService } from "./auth.service";
 import { AuthGuardService } from "./auth-guard.service";
+
+import { SignupComponent } from './signup/signup.component';
+
 import { WatchListService } from "./watch-list.service"
 import { PageService } from "./page.service";
 import { AdminService } from "./admin.service";
@@ -35,7 +38,8 @@ export function tokenGetter() {
     UserPageComponent,
     AdminComponent,
     AuthComponent,
-    HomePageComponent
+    HomePageComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
