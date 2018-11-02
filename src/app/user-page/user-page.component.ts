@@ -22,6 +22,7 @@ export class UserPageComponent implements OnInit {
     this.service.delete(id).subscribe(data => {
       console.log(data)
     })
+    window.location.href = "/user-page";
   }
 
   updateItem(id, image) {
