@@ -18,6 +18,8 @@ import { AuthComponent } from "./auth/auth.component";
 import { HomePageComponent } from "./home-page/home-page.component";
 import { AuthService } from "./auth.service";
 import { AuthGuardService } from "./auth-guard.service";
+import { WatchListService } from "./watch-list.service"
+import { PageService } from "./page.service";
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -46,7 +48,7 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [DataService, AuthService, AuthGuardService],
+  providers: [DataService, AuthService, AuthGuardService, WatchListService, PageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -9,6 +9,8 @@
     <mat-menu #menu="matMenu">
       <button mat-menu-item><a routerLink="/auth">Sign In</a></button>
       <button mat-menu-item>Item 2</button>
+      <button mat-menu-item routerLink="/user-page">Watch List</button>
+      <button mat-menu-item (click)="logout()">Logout</button>
     </mat-menu>
   </mat-toolbar-row>
-</mat-toolbar>
+</mat-toolbar> 
