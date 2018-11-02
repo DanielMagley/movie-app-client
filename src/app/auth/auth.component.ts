@@ -33,4 +33,4 @@ export class AuthComponent implements OnInit {
 
     console.log(this.userEmail, this.password);
   }
-}
+} 
