@@ -30,8 +30,9 @@ export class AuthComponent implements OnInit {
 
   onSignInSubmit() {
     this.authService.signIn(this.userEmail, this.password).subscribe(user => {
+      //console.log(user.isAdmin)
       sessionStorage.setItem("token", user.sessionToken);
-      sessionStorage.setItem("isAdmin", user.isAdmin);
+      sessionStorage.setItem('isAdmin', user.isAdmin ) 
       alert(user.message);
       window.location.href = "/user-page";
     });
