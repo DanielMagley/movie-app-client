@@ -6,11 +6,13 @@ import { MAT_DATEPICKER_VALIDATORS } from '../../node_modules/@angular/material'
   providedIn: 'root'
 })
 export class WatchListService {
+  authorization = sessionStorage.getItem('token')
 
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNTQxMDcyOTI1LCJleHAiOjE1NDExNTkzMjV9.tG93dXhRZm26kdqsc_W1lSkxa-1QYk6Ka8oHglcH95w'
+      //'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNTQxMDcyOTI1LCJleHAiOjE1NDExNTkzMjV9.tG93dXhRZm26kdqsc_W1lSkxa-1QYk6Ka8oHglcH95w'
+      'Authorization': this.authorization
     })
   }
 
