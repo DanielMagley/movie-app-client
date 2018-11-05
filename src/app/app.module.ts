@@ -24,6 +24,7 @@ import { SignupComponent } from './signup/signup.component';
 import { WatchListService } from "./watch-list.service"
 import { PageService } from "./page.service";
 import { AdminService } from "./admin.service";
+import { SettingsComponent } from './settings/settings.component';
 
 
 export function tokenGetter() {
@@ -39,7 +40,8 @@ export function tokenGetter() {
     AdminComponent,
     AuthComponent,
     HomePageComponent,
-    SignupComponent
+    SignupComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

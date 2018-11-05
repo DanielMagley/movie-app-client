@@ -6,4 +6,5 @@ export class UserSignIn {
   message: string;
   sessionToken: string;
   isAdmin: string;
+  user: string;
 }
