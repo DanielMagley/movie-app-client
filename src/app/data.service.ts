@@ -22,4 +22,18 @@ export class DataService {
       httpOptions
     );
   }
+
+  getMoreStuff(subText) {
+    return this.http.get(
+      `https://utelly-tv-shows-and-movies-availability-v1.p.mashape.com/lookup?country=us&term='${subText}'`,
+      httpOptions
+    );
+  }
+
+  getEvenMoreStuff(superSubText) {
+    return this.http.get(
+      `https://utelly-tv-shows-and-movies-availability-v1.p.mashape.com/lookup?country=us&term='${superSubText}'`,
+      httpOptions
+    );
+  }
 }
