@@ -1,60 +1,230 @@
-.shows {
-  list-style-type: none;
+@import url("https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Russo+One");
+
+label {
+  display: flex;
+  justify-content: center;
+  margin-top: 6em;
+  margin-bottom: 6em;
+}
+
+.input {
+  position: relative;
+  font-size: 1.5em;
+  background: linear-gradient(21deg, #10abff, #1beabd);
+  padding: 3px;
+  display: inline-block;
+  border-radius: 9999em;
+  input {
+    height: 2em;
+    width: 20em;
+    font-size: 1em;
+    text-align: center;
+  }
+  *:not(span) {
+    position: relative;
+    display: inherit;
+    border-radius: inherit;
+    margin: 0;
+    border: none;
+    outline: none;
+    padding: 0 0.325em;
+    z-index: 1;
+
+    &:focus + span {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  span {
+    transform: scale(0.993, 0.94);
+    transition: transform 0.5s, opacity 0.35s;
+    opacity: 0;
+
+    position: absolute;
+    z-index: 0;
+    margin: 6px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 3px #fff, 0 0 0 4px #fff, 3px -3px 30px #1beabd,
+      -3px 3px 30px #10abff;
+  }
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.5;
+  font-size: 12em;
+}
+
+body {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+input {
+  font-family: inherit;
+  line-height: inherit;
+  color: #2e3750;
+  min-width: 12em;
+}
+
+::placeholder {
+  color: #cbd0d5;
+}
+
+html::after {
+  content: "";
+  background: linear-gradient(21deg, #10abff, #1beabd);
+  height: 3px;
   width: 100%;
-  display: grid;
-  justify-items: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  background-color: rgb(32, 30, 30);
-  color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.wrapper {
+  list-style-type: none;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-around;
+  // justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+  // background-color: rgb(32, 30, 30);
+  background-color: white;
+  color: black;
 }
 
 .cover {
   height: 200px;
-  width: 250px;
+  // width: 250px;
+  width: 300px;
   opacity: 1;
   transition: 0.5s ease;
   backface-visibility: hidden;
+  box-shadow: 0 1em 2em rgba(0, 0, 0, 0.4);
 }
 
-.middle {
-  transition: 0.5s ease;
-  opacity: 0;
-  position: relative;
-  margin-top: -40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-  justify-items: center;
+// .middle {
+//   transition: 0.5s ease;
+//   opacity: 0;
+//   position: relative;
+//   margin-top: -40%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   -ms-transform: translate(-50%, -50%);
+//   text-align: center;
+//   justify-items: center;
 
-  & .icon {
-    margin: 0;
-    font-size: 32px;
+//   & .icon {
+//     margin: 0;
+//     font-size: 32px;
+//   }
+
+//   & p {
+//     margin: 0;
+//   }
+// }
+
+.widget {
+  width: 100%;
+  background: none;
+  color: #ddd;
+  transition: 0.5s;
+  display: flex;
+  // flex-shrink: 2;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: 4em;
+
+  flex-direction: column;
+  &:hover {
+    transform: scale(1.1);
   }
-
-  & p {
-    margin: 0;
-  }
 }
 
-.list:hover .cover {
-  opacity: 0.2;
+.widget:hover .cover {
+  // opacity: 0.2;
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
-.list:hover .middle {
+.widget:hover .middle {
   opacity: 1;
 }
 
-.text {
-  color: white;
-  font-size: 26px;
-  padding: 12px 12px;
+.widget:hover .description {
+  opacity: 1;
+  transform: scale(1.1);
 }
+
+// .text {
+//   color: white;
+//   font-size: 26px;
+//   padding: 12px 12px;
+// }
 
 button {
   color: white;
   background-color: transparent;
   border-color: transparent;
   cursor: pointer;
+}
+
+.description {
+  box-shadow: 2px 24px 22px -15px rgba(0, 0, 0, 0.59);
+  opacity: 1;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  width: 300px;
+  background: #222;
+  transition: 0.5s ease;
+  font-weight: 200;
+
+  & h2 {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Russo One", sans-serif;
+    color: white;
+  }
+
+  & button {
+    border: none;
+    width: 80px;
+
+    height: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Russo One", sans-serif;
+    background: #ff7100;
+    color: #ddd;
+    transition: 0.5s;
+
+    &:hover {
+      cursor: pointer;
+      // opacity: 1;
+      color: #222;
+    }
+  }
+}
+
+.description div {
+  padding: 10px;
 }
