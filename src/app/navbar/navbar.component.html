@@ -5,13 +5,17 @@
     <button mat-menu-item class="product-page"><a routerLink="">Third
         Line</a></button>
     <span class="example-spacer"></span>
-    <mat-icon class="example-icon" [matMenuTriggerFor]="menu">menu</mat-icon>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item><a routerLink="/auth">Sign In</a></button>
+    <button mat-menu-item routerLink="/user-page">Watch List</button>
+       <div *ngIf="!toggle; else userStuff">  
+       <button mat-menu-item><a routerLink="/auth">Sign In</a></button>
+       </div> 
+      <ng-template #userStuff>  
+      <!-- <mat-icon class="example-icon" [matMenuTriggerFor]="menu">menu</mat-icon>  -->
+      <!-- <mat-menu #menu="matMenu">  -->
       <button mat-menu-item routerLink="/settings">Profile</button>
-      <button mat-menu-item routerLink="/user-page">Watch List</button>
       <button mat-menu-item (click)="logout()">Logout</button>
       <button mat-menu-item (click)="adminPage()">Admin</button>
-    </mat-menu>
+      <!-- </mat-menu>  -->
+     </ng-template> 
   </mat-toolbar-row>
 </mat-toolbar> 

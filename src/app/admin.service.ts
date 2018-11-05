@@ -24,5 +24,18 @@ export class AdminService {
     let url = `http://localhost:4000/user/delete/${id}`
     return this.http.delete(url, this.httpOptions)
   }
-} 
+  
+  getData(userid, first, last, emails, pass){
+    let url = `http://localhost:4000/user/update/${userid}`
+    return this.http.put(url, 
+      {
+        //id: userid,
+        firstName: first,
+        lastName: last,
+        userEmail: emails,
+        password: pass
+      },
+      this.httpOptions)
+    }
+  }  
 

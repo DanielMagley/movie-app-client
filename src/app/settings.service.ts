@@ -36,4 +36,4 @@ myDetails(){
     return this.http.get(url, this.httpOptions)
 }
 
-}
+} 
