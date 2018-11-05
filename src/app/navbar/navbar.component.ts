@@ -8,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   constructor() { }
-
+ toggle;
   ngOnInit() {
+    if(sessionStorage.getItem('token')) {
+      this.toggle = true;
+    } else {
+      this.toggle = false
+    }
   }
 
   logout(){
@@ -25,4 +30,4 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-}
+} 

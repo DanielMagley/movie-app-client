@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms'
 import { AdminService } from '../admin.service'
 
 @Component({
@@ -8,6 +9,7 @@ import { AdminService } from '../admin.service'
 })
 export class AdminComponent implements OnInit {
 users;
+data;
   constructor(
     private service: AdminService
   ) { }
@@ -19,6 +21,29 @@ users;
     })
   }
 
+  adminForm = new FormGroup({
+    userID: new FormControl(''),
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl('')
+  })
+
+  onSubmit() {
+    let datas = this.adminForm.value
+    let userid = datas.userID 
+    let first = datas.firstName
+    let last = datas.lastName
+    let emails = datas.email
+    let pass = datas.password
+    this.data = this.service.getData(userid,first, last, emails, pass)
+    .subscribe(info => {
+      console.log(info)
+      window.location.href = "/admin"
+    })
+  }
+
+  
   deleteUser(id){
     console.log(id)
     this.service.delete(id).subscribe(data => {
@@ -26,5 +51,6 @@ users;
       window.location.href = "/admin";
     })
   }
+  
+} 
 
-}
