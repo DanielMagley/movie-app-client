@@ -69,21 +69,22 @@ body {
   justify-content: center;
 }
 
-html,
-body {
-  height: 100vh;
-  width: 100vw;
-}
+// html,
+// body {
+//   height: 100vh;
+//   width: 100vw;
+// }
 
 input {
   font-family: inherit;
   line-height: inherit;
-  color: #2e3750;
+  color: #1beabd;
   min-width: 12em;
+  background-color: black;
 }
 
 ::placeholder {
-  color: #cbd0d5;
+  color: 10abff;
 }
 
 html::after {
@@ -98,26 +99,25 @@ html::after {
 
 .wrapper {
   list-style-type: none;
-  width: 100vw;
+  width: 80vw;
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-around;
-  // justify-content: space-evenly;
   justify-content: center;
   align-items: center;
-  // background-color: rgb(32, 30, 30);
-  background-color: white;
+  background-color: black;
   color: black;
+  margin: auto;
 }
 
 .cover {
-  height: 200px;
+  height: 220px;
   // width: 250px;
   width: 300px;
   opacity: 1;
   transition: 0.5s ease;
   backface-visibility: hidden;
   box-shadow: 0 1em 2em rgba(0, 0, 0, 0.4);
+  border-radius: 10% 10% 0 0;
 }
 
 // .middle {
@@ -151,6 +151,7 @@ html::after {
   flex-wrap: wrap;
   align-items: center;
   padding-bottom: 2em;
+  margin: 0.2em 0.2em 0.2em 0.2em;
 
   flex-direction: column;
   &:hover {
@@ -159,7 +160,7 @@ html::after {
 }
 
 .widget:hover .cover {
-  // opacity: 0.2;
+  // opacity: 0.7;
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -173,17 +174,61 @@ html::after {
   transform: scale(1.1);
 }
 
+.mask {
+  opacity: 0;
+  background-color: rgba(85, 84, 84, 0.671);
+  transition: all 0.4s ease-in-out;
+  width: 328px;
+  height: 250px;
+  position: absolute;
+  overflow: hidden;
+  top: -10.7px;
+  left: -10.58px;
+  border-radius: 10% 10% 0 0;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.widget .add {
+  font-family: Merriweather, serif;
+  font-style: italic;
+  font-size: 14px;
+  position: relative;
+  color: #fff;
+  padding: 0px 20px 0px;
+  text-align: center;
+}
+
 // .text {
 //   color: white;
 //   font-size: 26px;
 //   padding: 12px 12px;
 // }
 
-button {
+.add {
   color: white;
   background-color: transparent;
   border-color: transparent;
+  margin-left: 7em;
+  margin-top: 2em;
   cursor: pointer;
+  font-size: 44px;
+  display: block;
+}
+
+.icon {
+  font-size: 6em;
+}
+
+p {
+  color: white;
+  background-color: transparent;
+  border-color: transparent;
+  margin-left: 4.5em;
+  cursor: pointer;
+  font-size: 24px;
+  display: block;
 }
 
 .description {
@@ -193,11 +238,12 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 50px;
   width: 300px;
   background: #222;
   transition: 0.5s ease;
   font-weight: 200;
+  border-radius: 0 0 10% 10px;
 
   & h2 {
     font-size: 16px;
@@ -208,8 +254,8 @@ button {
 
   & button {
     border: none;
+    border-radius: 0 0 10% 0;
     width: 80px;
-
     height: 100%;
     font-size: 16px;
     font-weight: 600;
