@@ -13,23 +13,18 @@
 
 <!---------RESULTS-------------->
 <div class="wrapper">
-  <div *ngFor='let items of moreItems'>
+  <div *ngFor='let item of moreItems'>
     <div class="widget">
-      <img class='cover' src='{{ items.picture }}' />
-      <!-- <div class='middle'>
-      
-              <div class='text'>
-                <button (click)="watchList(item.picture)"><i class="material-icons icon">
-                    add_circle_outline
-                  </i></button>
-                <p>Add to List</p>
-              </div>
-            </div>
-          </div> -->
-
+      <img class='cover' src='{{ item.picture }}' />
+      <div class="mask">
+        <button class="add" (click)="watchList(item.picture)"><i class="material-icons icon">
+            add_circle
+          </i></button>
+        <p>Add to List</p>
+      </div>
       <div class="description">
         <div>
-          <h2>{{ items.name }}</h2>
+          <h2>{{ item.name }}</h2>
         </div>
         <button>Watch Now</button>
       </div>
@@ -45,16 +40,12 @@
   <div *ngFor='let item of items'>
     <div class="widget">
       <img class='cover' src='{{ item.picture }}' />
-      <!-- <div class='middle'>
-
-        <div class='text'>
-          <button (click)="watchList(item.picture)"><i class="material-icons icon">
-              add_circle_outline
-            </i></button>
-          <p>Add to List</p>
-        </div>
+      <div class="mask">
+        <button class="add" (click)="watchList(items.picture)"><i class="material-icons icon">
+            add_circle
+          </i></button>
+        <p>Add to List</p>
       </div>
-    </div> -->
 
       <div class="description">
         <div>
@@ -74,16 +65,12 @@
   <div *ngFor='let item of evenMoreItems'>
     <div class="widget">
       <img class='cover' src='{{ item.picture }}' />
-      <!-- <div class='middle'>
-  
-          <div class='text'>
-            <button (click)="watchList(item.picture)"><i class="material-icons icon">
-                add_circle_outline
-              </i></button>
-            <p>Add to List</p>
-          </div>
-        </div>
-      </div> -->
+      <div class="mask">
+        <button class="add" (click)="watchList(items.picture)"><i class="material-icons icon">
+            add_circle
+          </i></button>
+        <p>Add to List</p>
+      </div>
 
       <div class="description">
         <div>
