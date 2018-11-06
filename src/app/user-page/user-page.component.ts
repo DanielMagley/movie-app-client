@@ -15,8 +15,11 @@ export class UserPageComponent implements OnInit {
   ngOnInit() {
     this.service.getList().subscribe(data => {
       this.returns = data;
+      console.log(this.returns)
+      }
     })
-  }
+  
+
 
   deleteItem(id){
     this.service.delete(id).subscribe(data => {
@@ -32,3 +35,5 @@ export class UserPageComponent implements OnInit {
   }
 
 } 
+
+
