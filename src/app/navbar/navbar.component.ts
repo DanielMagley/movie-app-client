@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
 
   logout(){
     sessionStorage.clear()
-    window.location.href = "/";
+    window.location.href = "/"; 
   }
 
   adminPage() {
@@ -28,6 +28,6 @@ export class NavbarComponent implements OnInit {
     } else {
       window.location.href = "/";
     }
-  }
+  } 
 
-} 
+}   

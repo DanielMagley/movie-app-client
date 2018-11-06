@@ -48,9 +48,12 @@ export function tokenGetter() {
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule,
     ReactiveFormsModule,
+
     MatDialogModule,
+
+    HttpClientModule,
+
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter

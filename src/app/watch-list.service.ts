@@ -18,13 +18,14 @@ export class WatchListService {
 
   constructor(private http: HttpClient) { }
 
-  makeList(pictures) {
+  makeList(pictures, urls) {
     // console.log(pictures)
-    let url = 'http://localhost:4000/yourlist/new'
+    let urlss = 'http://localhost:4000/yourlist/new'
 
-    return this.http.post(url, 
+    return this.http.post(urlss, 
   {
-    movieImage: pictures
+    movieImage: pictures,
+     url: urls
   }, this.httpOptions)
   }
 }
