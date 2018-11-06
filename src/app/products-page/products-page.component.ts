@@ -2,8 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, FormControl } from "@angular/forms";
 import { DataService } from "../data.service";
 import { WatchListService } from "../watch-list.service";
-import { of } from "rxjs";
-import { MAT_DATEPICKER_VALIDATORS } from "../../../node_modules/@angular/material";
+import { MatDialog, MatDialogRef } from "@angular/material";
+import { WatchNowComponent } from "../modals/watch-now/watch-now.component";
 
 @Component({
   selector: "app-products-page",
@@ -27,14 +27,14 @@ export class ProductsPageComponent {
   itemsArr;
   constructor(
     private service: DataService,
-    private services: WatchListService
+    private services: WatchListService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {}
 
   onSubmit() {
     let text = this.form.value.input;
-    // let subText = text.substring(0, 1);
     let subText = text;
     let superSubText = text.substring(0, 1);
 
@@ -72,7 +72,9 @@ export class ProductsPageComponent {
     });
   }
 
-  test(test){
-    console.log(test)
+  openDialog(item): void {
+    sessionStorage.setItem("movieData", JSON.stringify(item));
+    this.dialog.open(WatchNowComponent, { data: item });
+    console.log(item);
   }
-} 
+}
