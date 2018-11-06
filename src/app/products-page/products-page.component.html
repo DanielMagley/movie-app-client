@@ -1,6 +1,4 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-
-
   <label>
     <span class="input">
       <input type="text" formControlName='input' placeholder="Search for Show/Movie">
@@ -28,22 +26,26 @@
           <div>
             <h2>{{ item.name }}</h2>
           </div>
-          <button>Watch Now</button>
+          <button (click)="openDialog(item)">Watch Now</button>
+
         </div>
     </div>
-    <!-- <div>
+    <div>
       <a *ngFor="let loco of item.locations" href="{{loco.url}}">
         <img src='{{loco.icon}}' />
+
      </a>
         
     </div> -->
   </div>
 
   <div *ngFor='let item of items'>
+
     <div class="widget">
       <img class='cover' src='{{ item.picture }}' />
       <div *ngFor="let loco of item.locations">
       <div class="mask">
+
           <button class="add" (click)="watchList(item.picture, loco.url)"><i class="material-icons icon">
               add_circle
             </i></button>
@@ -57,13 +59,15 @@
         <button>Watch Now</button>
       </div>
     </div>
-    <!-- <div>
+    <div>
         <a *ngFor="let loco of item.locations" href="{{loco.url}}">
           <img src='{{loco.icon}}' />
         </a>
   
       </div> -->
   </div>
+
+
 
   <div *ngFor='let item of evenMoreItems'>
     <div class="widget">
@@ -90,3 +94,4 @@
           </a>   -->
   <!-- </div>    -->
 </div>
+
