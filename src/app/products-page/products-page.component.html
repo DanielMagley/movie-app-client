@@ -16,62 +16,40 @@
   <div *ngFor='let item of moreItems'>
     <div class="widget">
       <img class='cover' src='{{ item.picture }}' />
+      <div *ngFor="let loco of item.locations">
       <div class="mask">
-        <button class="add" (click)="watchList(item.picture)"><i class="material-icons icon">
-            add_circle
-          </i></button>
-        <p>Add to List</p>
-      </div>
-      <div class="description">
-        <div>
-          <h2>{{ item.name }}</h2>
+          <button class="add" (click)="watchList(item.picture, loco.url)"><i class="material-icons icon">
+              add_circle
+            </i></button>
+          <p>Add to List</p>
         </div>
-        <button>Watch Now</button>
       </div>
-    </div>
-    <!-- <div>
-            <a *ngFor="let loco of item.locations" href="{{loco.url}}">
-              <img src='{{loco.icon}}' />
-            </a>
-      
-          </div> -->
-
-  </div>
-  <div *ngFor='let item of items'>
-    <div class="widget">
-      <img class='cover' src='{{ item.picture }}' />
-      <div class="mask">
-        <button class="add" (click)="watchList(items.picture)"><i class="material-icons icon">
-            add_circle
-          </i></button>
-        <p>Add to List</p>
-      </div>
-
-      <div class="description">
-        <div>
-          <h2>{{ item.name }}</h2>
+        <div class="description">
+          <div>
+            <h2>{{ item.name }}</h2>
+          </div>
+          <button>Watch Now</button>
         </div>
-        <button>Watch Now</button>
-      </div>
     </div>
     <!-- <div>
       <a *ngFor="let loco of item.locations" href="{{loco.url}}">
         <img src='{{loco.icon}}' />
-      </a>
-
+     </a>
+        
     </div> -->
-
   </div>
-  <div *ngFor='let item of evenMoreItems'>
+
+  <div *ngFor='let item of items'>
     <div class="widget">
       <img class='cover' src='{{ item.picture }}' />
+      <div *ngFor="let loco of item.locations">
       <div class="mask">
-        <button class="add" (click)="watchList(items.picture)"><i class="material-icons icon">
-            add_circle
-          </i></button>
-        <p>Add to List</p>
+          <button class="add" (click)="watchList(item.picture, loco.url)"><i class="material-icons icon">
+              add_circle
+            </i></button>
+          <p>Add to List</p>
+        </div>
       </div>
-
       <div class="description">
         <div>
           <h2>{{ item.name }}</h2>
@@ -85,5 +63,30 @@
         </a>
   
       </div> -->
-
   </div>
+
+  <div *ngFor='let item of evenMoreItems'>
+    <div class="widget">
+      <img class='cover' src='{{ item.picture }}' />
+      <div *ngFor="let loco of item.locations">
+      <div class="mask">
+          <button class="add" (click)="watchList(item.picture, loco.url)"><i class="material-icons icon">
+              add_circle
+            </i></button>
+          <p>Add to List</p>
+        </div>
+      </div>
+        <div class="description">
+          <div>
+            <h2>{{ item.name }}</h2>
+          </div>
+          <button>Watch Now</button>
+        </div>
+    </div>
+  </div>
+  <!-- <div> -->
+  <!-- <a *ngFor="let loco of item.locations" href="{{loco.url}}">
+            <img src='{{loco.icon}}' />
+          </a>   -->
+  <!-- </div>    -->
+</div>

@@ -41,7 +41,8 @@ export class ProductsPageComponent {
     this.result = this.service.getStuff(text).subscribe(data => {
       this.itemsArr = data;
       this.items = this.itemsArr.results;
-      // console.log(this.items);
+      console.log('first')
+      console.log(this.items);
     });
 
     this.moreResults = this.service
@@ -49,8 +50,9 @@ export class ProductsPageComponent {
       .subscribe(moreData => {
         this.moreResultsArr = moreData;
         this.moreItems = this.moreResultsArr.results;
+        console.log('second')
         console.log(this.moreItems);
-        console.log(subText);
+        //console.log(subText);
       });
 
     this.evenMoreResults = this.service
@@ -58,13 +60,19 @@ export class ProductsPageComponent {
       .subscribe(evenMoreData => {
         this.evenMoreResultsArr = evenMoreData;
         this.evenMoreItems = this.evenMoreResultsArr.results;
+        console.log('third')
         console.log(this.evenMoreItems);
       });
   }
 
-  watchList(picture) {
-    this.services.makeList(picture).subscribe(data => {
+  watchList(picture, url) {
+    console.log(url)
+    this.services.makeList(picture, url).subscribe(data => {
       console.log(data);
     });
+  }
+
+  test(test){
+    console.log(test)
   }
 } 
