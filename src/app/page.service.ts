@@ -28,13 +28,15 @@ export class PageService {
     return this.http.delete(url, this.httpOptions)
   }
 
-  update(id, image) {
-    let url = `http://localhost:4000/yourlist/update/${id}`
-    return this.http.put(url, 
+  update(id, image, url) {
+    console.log(url)
+    let urls = `http://localhost:4000/yourlist/update/${id}`
+    return this.http.put(urls, 
     {
       movieImage: image,
+      url: url,
       isWatched: true
-    },
-  this.httpOptions)
+    }, this.httpOptions)
   }
+
 }
