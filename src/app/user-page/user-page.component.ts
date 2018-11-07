@@ -11,15 +11,13 @@ export class UserPageComponent implements OnInit {
   constructor(private service: PageService) {}
 
   ngOnInit() {
-    this.service.getList().subscribe
-    (data => {
+    this.service.getList().subscribe(data => {
       this.returns = data;
 
-      console.log(this.returns)
-      })
-    } 
-  deleteItem(id){
-
+      console.log(this.returns);
+    });
+  }
+  deleteItem(id) {
     this.service.delete(id).subscribe(data => {
       console.log(data);
     });
@@ -27,10 +25,10 @@ export class UserPageComponent implements OnInit {
   }
 
   updateItem(id, image, url) {
-    console.log(id, image, url)
+    // console.log(id, image, url)
     this.service.update(id, image, url).subscribe(data => {
       //console.log(data)
       //alert('Marked as watched')
-    })
+    });
   }
 }
