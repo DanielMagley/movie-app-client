@@ -69,20 +69,14 @@
         </div>
       </div>
 
-        <div class="description">
-          <div>
-            <h2>{{ item.name }}</h2>
-          </div>
-          <button (click)="openDialog(item)">Watch Now</button>
-
+      <div class="description">
+        <div>
+          <h2>{{ item.name }}</h2>
         </div>
         <button (click)="openDialog(item)">Watch Now</button>
+
       </div>
+      <button (click)="openDialog(item)">Watch Now</button>
     </div>
   </div>
-  <!-- <div> -->
-  <!-- <a *ngFor="let loco of item.locations" href="{{loco.url}}">
-            <img src='{{loco.icon}}' />
-          </a>   -->
-  <!-- </div>    -->
 </div>
