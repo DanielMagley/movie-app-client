@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, FormControl } from "@angular/forms";
 import { DataService } from "../data.service";
+import { WatchListService } from "../watch-list.service";
+import { MatDialog, MatDialogRef } from "@angular/material";
+import { WatchNowComponent } from "../modals/watch-now/watch-now.component";
 
 @Component({
   selector: "app-products-page",
@@ -13,26 +16,65 @@ export class ProductsPageComponent {
   });
   locationArr;
   result;
+  moreResults;
+  moreResultsArr;
+  moreItems;
+  evenMoreResults;
+  evenMoreResultsArr;
+  evenMoreItems;
+  addOne;
   items;
   itemsArr;
-  constructor(private service: DataService) {}
+  constructor(
+    private service: DataService,
+    private services: WatchListService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit() {}
 
   onSubmit() {
     let text = this.form.value.input;
-    // let cat = this.form.value.categories;
+    let subText = text;
+    let superSubText = text.substring(0, 1);
+
     this.result = this.service.getStuff(text).subscribe(data => {
       this.itemsArr = data;
       this.items = this.itemsArr.results;
-      for (let i in this.items) {
-      }
-      console.log(this.locationArr);
-
+      console.log('first')
       console.log(this.items);
-      // console.log(this.items[i].locations[i].display_name);
+    });
+
+    this.moreResults = this.service
+      .getMoreStuff(subText)
+      .subscribe(moreData => {
+        this.moreResultsArr = moreData;
+        this.moreItems = this.moreResultsArr.results;
+        console.log('second')
+        console.log(this.moreItems);
+        //console.log(subText);
+      });
+
+    this.evenMoreResults = this.service
+      .getEvenMoreStuff(superSubText)
+      .subscribe(evenMoreData => {
+        this.evenMoreResultsArr = evenMoreData;
+        this.evenMoreItems = this.evenMoreResultsArr.results;
+        console.log('third')
+        console.log(this.evenMoreItems);
+      });
+  }
+
+  watchList(picture, url) {
+    console.log(url)
+    this.services.makeList(picture, url).subscribe(data => {
+      console.log(data);
     });
   }
 
-  getLocations(items) {}
+  openDialog(item): void {
+    sessionStorage.setItem("movieData", JSON.stringify(item));
+    this.dialog.open(WatchNowComponent, { data: item });
+    console.log(item);
+  }
 }

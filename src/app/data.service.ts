@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",
-    "X-Mashape-Key": "TKgwaijYE1mshNMJv3smzYgaS05Wp12Rwl5jsnYHd9aCAe8SCP"
+    "X-Mashape-Key": "OKhzpzj7AKmshdFaWslnqQOXyEi8p1HFGpojsn6oPjCTq7fbUT"
   })
 };
 
@@ -19,6 +19,20 @@ export class DataService {
   getStuff(text) {
     return this.http.get(
       `https://utelly-tv-shows-and-movies-availability-v1.p.mashape.com/lookup?country=us&term=${text}`,
+      httpOptions
+    );
+  }
+
+  getMoreStuff(subText) {
+    return this.http.get(
+      `https://utelly-tv-shows-and-movies-availability-v1.p.mashape.com/lookup?country=us&term='${subText}'`,
+      httpOptions
+    );
+  }
+
+  getEvenMoreStuff(superSubText) {
+    return this.http.get(
+      `https://utelly-tv-shows-and-movies-availability-v1.p.mashape.com/lookup?country=us&term='${superSubText}'`,
       httpOptions
     );
   }

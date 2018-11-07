@@ -3,6 +3,24 @@
   cursor: pointer;
 }
 
-.example-spacer {
-  flex: 1 1 auto;
+ .example-spacer {
+   flex: 1 1 auto;
+ }
+
+ .watch {
+   float: right;
+ }
+
+ button.mat-menu-item {
+    width: 150px;
+ }
+
+#fix {
+  width: 100%;
 }
+
+  .border {
+    border: solid 1px transparent;
+ }
+
+ button:focus { outline: none; }

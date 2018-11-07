@@ -1,3 +1,40 @@
-<p>
-  admin works!
-</p>
+<ul>
+  <li *ngFor="let user of users">
+    {{user.id}}
+    {{user.firstName}}
+    {{user.lastName}}
+    {{user.userEmail}}
+    <button (click)="deleteUser(user.id)">Delete</button>
+  </li>
+</ul>
+
+<form [formGroup]='adminForm' (ngSubmit)='onSubmit()'>
+  <label>
+    User ID
+    <input type='text' formControlName='userID'>
+  </label>
+    <label>
+      First Name
+      <input type='text' formControlName='firstName'>
+    </label>
+    <label>
+      Last Name
+      <input type='text' formControlName='lastName'>
+    </label>
+    <label>
+      Email
+      <input type='text' formControlName='email'>
+    </label>
+    <label>
+      Password
+      <input type='password' formControlName='password'>
+    </label>
+    <button type='submit'>Submit</button>
+  </form> 
+
+
+
+
+
+
+

@@ -1,2 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+body,
+html {
+  // background-color: rgb(32, 30, 30);
+  background-color: black;
+  width: 100vw;
+}
+
+.mat-dialog-container {
+  // background-color: red;
+  border-radius: 5%;
+}

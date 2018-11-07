@@ -1,15 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { AuthService } from "../auth.service";
 
 @Component({
-  selector: 'app-auth',
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.scss']
+  selector: "app-auth",
+  templateUrl: "./auth.component.html",
+  styleUrls: ["./auth.component.scss"]
 })
 export class AuthComponent implements OnInit {
+  signInForm: FormGroup;
 
-  constructor() { }
+  userEmail: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  signUp = false;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {
+    this.signInForm = this.formBuilder.group({
+      email: ["", Validators.required],
+      password: ["", Validators.required]
+    });
   }
 
-}
+  onSignInSubmit() {
+    this.authService.signIn(this.userEmail, this.password).subscribe(user => {
+      console.log(user)
+      sessionStorage.setItem("token", user.sessionToken);
+      sessionStorage.setItem('isAdmin', user.isAdmin )
+      sessionStorage.setItem('Id', user.id) 
+      alert(user.message);
+      window.location.href = "/user-page";
+    });
+  }
+} 

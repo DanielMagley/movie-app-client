@@ -1,28 +1,82 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-
-
   <label>
-    <input type="text" formControlName='input'>
+    <span class="input">
+      <input type="text" formControlName='input' placeholder="Search for Show/Movie">
+      <span></span>
+    </span>
+
   </label>
-  <input type="submit" value="Search" class="button">
+  <!-- <input type="submit" value="Search" class="button"> -->
 </form>
 
-<div class="products" *ngFor='let item of items'>
-  <ul>
-    <li>{{ item.name }}</li>
-    <li>
-      <img src='{{ item.picture }}' height="250px" width="250px" />
-    </li>
-    <!-- <li>{{ item.locations.display_name}}</li>
-    <li>{{ item.locations.url }}</li>
-    <li> {{item.locations.icon }}</li> -->
+<!---------RESULTS-------------->
+<div class="wrapper">
+  <div *ngFor='let item of moreItems'>
+    <div class="widget">
+      <img class='cover' src='{{ item.picture }}' />
+      <div *ngFor="let loco of item.locations">
+        <div class="mask">
+          <button class="add" (click)="watchList(item.picture, loco.url)"><i class="material-icons icon">
+              playlist_add
+            </i></button>
+          <p>Add to List</p>
+        </div>
+      </div>
+      <div class="description">
+        <div>
+          <h2>{{ item.name }}</h2>
+        </div>
+        <button (click)="openDialog(item)">Watch Now</button>
+
+      </div>
+    </div>
+  </div>
+
+  <div *ngFor='let item of items'>
+
+    <div class="widget">
+      <img class='cover' src='{{ item.picture }}' />
+      <div *ngFor="let loco of item.locations">
+        <div class="mask">
+
+          <button class="add" (click)="watchList(item.picture, loco.url)"><i class="material-icons icon">
+              playlist_add
+            </i></button>
+          <p>Add to List</p>
+        </div>
+      </div>
+      <div class="description">
+        <div>
+          <h2>{{ item.name }}</h2>
+        </div>
+        <button (click)="openDialog(item)">Watch Now</button>
+      </div>
+    </div>
+
+  </div>
 
 
-    <li>{{item.locations[0].display_name}}</li>
-    <li>{{item.locations[0].id}}</li>
-    <li> {{item.locations[0].url }}</li>
-    <li>
-      <img src='{{item.locations[0].icon }}' />
-    </li>
-  </ul>
+
+  <div *ngFor='let item of evenMoreItems'>
+    <div class="widget">
+      <img class='cover' src='{{ item.picture }}' />
+      <div *ngFor="let loco of item.locations">
+        <div class="mask">
+          <button class="add" (click)="watchList(item.picture, loco.url)"><i class="material-icons icon">
+              playlist_add
+            </i></button>
+          <p>Add to List</p>
+        </div>
+      </div>
+
+      <div class="description">
+        <div>
+          <h2>{{ item.name }}</h2>
+        </div>
+        <button (click)="openDialog(item)">Watch Now</button>
+
+      </div>
+      <button (click)="openDialog(item)">Watch Now</button>
+    </div>
+  </div>
 </div>
