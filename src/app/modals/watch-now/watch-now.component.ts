@@ -7,11 +7,15 @@ import { Component, OnInit, Inject } from "@angular/core";
 })
 export class WatchNowComponent implements OnInit {
   movieData: any;
-
+  netflix = "";
+  appleTv = "";
+  amazon = "";
+  local;
   constructor() {}
 
   ngOnInit() {
     this.movieData = JSON.parse(sessionStorage.getItem("movieData"));
-    console.log(this.movieData);
+    console.log(this.movieData.locations.display_name);
+    this.local = this.movieData.locations;
   }
 }
