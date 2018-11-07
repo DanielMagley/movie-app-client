@@ -2,19 +2,19 @@
 
 
   <mat-toolbar-row>
-    <button mat-menu-item class="product-page" routerLink="">Movie App</button>
+    <button mat-menu-item class="product-page border" routerLink="">Movie App</button>
     <span class="example-spacer"></span>
-    <button class="watch" mat-menu-item routerLink="/user-page">Watch List</button>
+    <button class="watch product-page border" mat-menu-item routerLink="/user-page">Watch List</button>
     <div *ngIf="!toggle; else userStuff">
-      <button mat-menu-item routerLink="/auth">Sign In</button>
+      <button class="border" mat-menu-item routerLink="/auth">Sign In</button>
     </div>
     <ng-template #userStuff>
-      <!-- <mat-icon class="example-icon" [matMenuTriggerFor]="menu">menu</mat-icon> -->
-      <!-- <mat-menu #menu="matMenu"> -->
-        <button mat-menu-item routerLink="/settings">Profile</button>
-        <button mat-menu-item (click)="logout()">Logout</button>
-        <button mat-menu-item (click)="adminPage()">Admin</button>
-      <!-- </mat-menu> -->
+       <mat-icon class="example-icon" [matMenuTriggerFor]="menu">menu</mat-icon>
+       <mat-menu #menu="matMenu"> 
+        <button id="fix" mat-menu-item routerLink="/settings">Profile</button>
+        <button id="fix" mat-menu-item (click)="logout()">Logout</button>
+        <button id="fix" mat-menu-item (click)="adminPage()">Admin</button>
+      </mat-menu> 
      </ng-template> 
   </mat-toolbar-row>
 </mat-toolbar>   

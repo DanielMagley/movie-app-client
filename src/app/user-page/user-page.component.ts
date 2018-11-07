@@ -11,13 +11,15 @@ export class UserPageComponent implements OnInit {
   constructor(private service: PageService) {}
 
   ngOnInit() {
-    this.service.getList().subscribe(data => {
+    this.service.getList().subscribe
+    (data => {
       this.returns = data;
-      console.log(this.returns);
-    });
-  }
 
-  deleteItem(id) {
+      console.log(this.returns)
+      })
+    } 
+  deleteItem(id){
+
     this.service.delete(id).subscribe(data => {
       console.log(data);
     });
