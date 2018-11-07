@@ -26,9 +26,11 @@ export class UserPageComponent implements OnInit {
     window.location.href = "/user-page";
   }
 
-  updateItem(id, image) {
-    this.service.update(id, image).subscribe(data => {
-      console.log(data)
+  updateItem(id, image, url) {
+    console.log(id, image, url)
+    this.service.update(id, image, url).subscribe(data => {
+      //console.log(data)
+      //alert('Marked as watched')
     })
   }
 
