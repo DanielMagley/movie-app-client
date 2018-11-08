@@ -6,7 +6,7 @@ export let APIURL = "";
 
 switch (window.location.hostname) {
   // this is the deployed angular application
-  case " https://streamlineapp.herokuapp.com":
+  case "https://asc-streamline-client.herokuapp.com":
     // this is the full url of your deployed API
     APIURL = "https://asc-streamline-server.herokuapp.com";
     break;
