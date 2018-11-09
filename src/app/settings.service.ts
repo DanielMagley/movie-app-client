@@ -34,6 +34,7 @@ export class SettingsService {
   }
 
   myDetails() {
+    console.log(this.id)
     let url = `${APIURL}/user/${this.id}`;
     return this.http.get(url, this.httpOptions);
   }
