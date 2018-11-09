@@ -1,21 +1,23 @@
 .wrapper {
     color: white;
-    text-align: center;
+    display: flex;
+    margin: auto;
     margin-top: 10%;
 }
 
-ul {
-    list-style-type: none;
-}
+ .list {
+     display: flex;
+    
+ }
 
-.form {
-   max-width: 200px;
-}
+ ul {
+     list-style-type: none;
+ }
 
-.line {
-    display: inline-block;
-}
+ .form {
+    max-width: 200px;
+ }
 
-.list {
-     margin-bottom: 15%;
+ .line {
+     margin: auto;
  }
