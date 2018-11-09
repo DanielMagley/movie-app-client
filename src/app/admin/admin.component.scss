@@ -8,9 +8,23 @@
     padding-left: 5%;
 }
 
+.box {
+    box-shadow: 0 4px 8px 0 rgb(253, 252, 252);
+    transition: 0.3s;
+    margin: 5px;
+    width: 250px;
+    // overflow-wrap: normal;
+    overflow-wrap: break-word;
+}
+
+.box:hover {
+    box-shadow: 0 8px 16px 0 rgb(253, 252, 252);
+}
+
  .list {
      display: flex;
     flex-wrap: wrap;
+    
  }
 
  ul {
