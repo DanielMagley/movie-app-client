@@ -1,15 +1,14 @@
-<div class="wrapper">
-  <div class="line list">
-    <ul>
-      <li *ngFor="let user of users">
-        {{user.id}}
-        {{user.firstName}}
-        {{user.lastName}}
-        {{user.userEmail}}
-        <button (click)="deleteUser(user.id)">Delete</button>
-      </li>
-    </ul>
-  </div>
+  <div class="wrapper">
+      <div class="line list">
+        <ul *ngFor="let user of users">
+            <li>User ID: {{user.id}}</li>
+            <li>First Name: {{user.firstName}}</li>
+            <li>Last Name: {{user.lastName}}</li>
+            <li>Email: {{user.userEmail}}</li>
+            <li>Admin: {{user.isAdmin}}</li>
+            <button (click)="deleteUser(user.id)">Delete</button>
+        </ul>
+      </div>
 
   <div class="line form">
     <form [formGroup]='adminForm' (ngSubmit)='onSubmit()'>
