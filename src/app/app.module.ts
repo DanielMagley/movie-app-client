@@ -1,5 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { MaterialModule } from "./material";
@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DataService } from "./data.service";
 import { JwtModule } from "@auth0/angular-jwt";
 import { MatDialogModule } from "@angular/material";
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 //--------Components-----------
 import { AppComponent } from "./app.component";
@@ -49,6 +50,7 @@ export function tokenGetter() {
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
+    MDBBootstrapModule.forRoot(),
 
     MatDialogModule,
 
@@ -69,6 +71,7 @@ export function tokenGetter() {
     AdminService
   ],
   bootstrap: [AppComponent],
-  entryComponents: [WatchNowComponent]
+  entryComponents: [WatchNowComponent],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule {}
