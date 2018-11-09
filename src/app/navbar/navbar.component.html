@@ -1,22 +1,31 @@
- <mat-toolbar color="primary">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+    <mdb-navbar-brand>
+        <a class="navbar-brand" href="">Stream Line</a>
+    </mdb-navbar-brand>
+    <links>
+        <ul class="navbar-nav">
+            <div *ngIf="!toggle; else userStuff">
+            <li class="nav-item">
+                <a class="nav-link waves-light" routerLink="/auth" mdbWavesEffect>Sign In <span class="sr-only">(current)</span></a>
+            </li>
+          </div>
+            <ng-template #userStuff>
+            <li class="nav-item">
+                <a class="nav-link waves-light" routerLink="/user-page" mdbWavesEffect>Watch List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" routerLink="/settings" mdbWavesEffect>Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" (click)="logout()" mdbWavesEffect>Logout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" (click)="adminPage()" mdbWavesEffect>Admin</a>
+            </li>
+          </ng-template>
+        </ul>
+    </links>
+</mdb-navbar>
 
-
-  <mat-toolbar-row>
-    <button mat-menu-item class="product-page border" routerLink="">Movie App</button>
-    <span class="example-spacer"></span>
-    <button class="watch product-page border" mat-menu-item routerLink="/user-page">Watch List</button>
-    <div *ngIf="!toggle; else userStuff">
-      <button class="border" mat-menu-item routerLink="/auth">Sign In</button>
-    </div>
-    <ng-template #userStuff>
-       <mat-icon class="example-icon" [matMenuTriggerFor]="menu">menu</mat-icon>
-       <mat-menu #menu="matMenu"> 
-        <button id="fix" mat-menu-item routerLink="/settings">Profile</button>
-        <button id="fix" mat-menu-item (click)="logout()">Logout</button>
-        <button id="fix" mat-menu-item (click)="adminPage()">Admin</button>
-      </mat-menu> 
-     </ng-template> 
-  </mat-toolbar-row>
-</mat-toolbar>   
 
 
