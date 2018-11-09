@@ -1,26 +1,37 @@
-<form [formGroup]='settingsForm' (ngSubmit)='onSubmit()'>
-  <label>
-    First Name
-    <input type='text' formControlName='firstName'>
-  </label>
-  <label>
-    Last Name
-    <input type='text' formControlName='lastName'>
-  </label>
-  <label>
-    Email
-    <input type='text' formControlName='email'>
-  </label>
-  <label>
-    Password
-    <input type='password' formControlName='password'>
-  </label>
-  <button type='submit'>Submit</button>
-</form>
-
-<ul>
-  <li>{{ids}}</li>
-  <li>{{firsts}}</li>
-  <li>{{lasts}}</li>
-  <li>{{mails}}</li>
-</ul>
+<div class="wrapper">
+  <div class="line">
+  <!-- <span class="line"> -->
+    <div class="form">
+      <form [formGroup]='settingsForm' (ngSubmit)='onSubmit()'>
+        <label>
+          First Name
+        </label>
+          <input type='text' formControlName='firstName'>
+        <label>
+          Last Name
+        </label>
+          <input type='text' formControlName='lastName'>
+        <label>
+          Email
+        </label>
+          <input type='text' formControlName='email'>
+        <label>
+          Password
+        </label>
+          <input type='password' formControlName='password'>
+        <button type='submit'>Submit</button>
+      </form>
+    </div>
+  <!-- </span> -->
+  </div>
+  <div class="line list">
+  <!-- <span class="line list"> -->
+    <ul>
+      <li>{{ids}}</li>
+      <li>{{firsts}}</li>
+      <li>{{lasts}}</li>
+      <li>{{mails}}</li>
+    </ul>
+  <!-- </span> -->
+  </div>
+</div>

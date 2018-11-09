@@ -29,7 +29,7 @@ mails;
         this.mails = this.array.userEmail;
       })
     
-  }
+  } 
 
   settingsForm = new FormGroup({
     firstName: new FormControl(''),
@@ -44,6 +44,7 @@ mails;
     let last = datas.lastName
     let emails = datas.email
     let pass = datas.password
+    console.log(first, last, emails, pass)
     this.data = this.service.getData(first, last, emails, pass)
     .subscribe(info => {
       console.log(info)

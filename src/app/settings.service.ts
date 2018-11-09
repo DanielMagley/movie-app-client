@@ -34,7 +34,7 @@ export class SettingsService {
   }
 
   myDetails() {
-    let url = `${APIURL}/${this.id}`;
+    let url = `${APIURL}/user/${this.id}`;
     return this.http.get(url, this.httpOptions);
   }
 }
