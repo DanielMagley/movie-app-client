@@ -1,13 +1,16 @@
 .wrapper {
     color: white;
     display: flex;
+    //flex-wrap: wrap;
     margin: auto;
     margin-top: 10%;
+    padding-right: 5%;
+    padding-left: 5%;
 }
 
  .list {
      display: flex;
-    
+    flex-wrap: wrap;
  }
 
  ul {
