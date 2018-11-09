@@ -15,6 +15,7 @@ ids;
 firsts;
 lasts;
 mails;
+admins;
   constructor(private service: SettingsService) { }
 
   ngOnInit() {
@@ -27,6 +28,7 @@ mails;
          this.firsts = this.array.firstName;
         this.lasts = this.array.lastName;
         this.mails = this.array.userEmail;
+        this.admins = this.array.isAdmin
       })
     
   } 
