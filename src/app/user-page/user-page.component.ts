@@ -10,6 +10,8 @@ export class UserPageComponent implements OnInit {
   returns;
   constructor(private service: PageService) {}
 
+  isClicked = false;
+
   ngOnInit() {
     this.service.getList().subscribe(data => {
       this.returns = data;
@@ -29,6 +31,7 @@ export class UserPageComponent implements OnInit {
     this.service.update(id, image, url).subscribe(data => {
       //console.log(data)
       //alert('Marked as watched')
+      this.isClicked = true;
     });
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms'
-import { AdminService } from '../admin.service'
+import { AdminService } from '../admin.service' 
 
 @Component({
   selector: 'app-admin',
