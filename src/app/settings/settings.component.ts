@@ -15,6 +15,7 @@ ids;
 firsts;
 lasts;
 mails;
+admins;
   constructor(private service: SettingsService) { }
 
   ngOnInit() {
@@ -27,9 +28,10 @@ mails;
          this.firsts = this.array.firstName;
         this.lasts = this.array.lastName;
         this.mails = this.array.userEmail;
+        this.admins = this.array.isAdmin
       })
     
-  }
+  } 
 
   settingsForm = new FormGroup({
     firstName: new FormControl(''),
@@ -44,6 +46,7 @@ mails;
     let last = datas.lastName
     let emails = datas.email
     let pass = datas.password
+    console.log(first, last, emails, pass)
     this.data = this.service.getData(first, last, emails, pass)
     .subscribe(info => {
       console.log(info)

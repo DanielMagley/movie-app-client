@@ -10,25 +10,28 @@ export class UserPageComponent implements OnInit {
   returns;
   constructor(private service: PageService) {}
 
+  isClicked = false;
+
   ngOnInit() {
-    this.service.getList().subscribe
-    (data => {
+    this.service.getList().subscribe(data => {
       this.returns = data;
 
-      console.log(this.returns)
-      })
-    } 
-  deleteItem(id){
-
+      console.log(this.returns);
+    });
+  }
+  deleteItem(id) {
     this.service.delete(id).subscribe(data => {
       console.log(data);
     });
     window.location.href = "/user-page";
   }
 
-  updateItem(id, image) {
-    this.service.update(id, image).subscribe(data => {
-      console.log(data);
+  updateItem(id, image, url) {
+    // console.log(id, image, url)
+    this.service.update(id, image, url).subscribe(data => {
+      //console.log(data)
+      //alert('Marked as watched')
+      this.isClicked = true;
     });
   }
 }

@@ -34,6 +34,8 @@ export class SignupComponent implements OnInit {
       .signUp(this.firstName, this.lastName, this.userEmail, this.password)
       .subscribe(user => {
         sessionStorage.setItem("token", user.sessionToken);
+        sessionStorage.setItem('isAdmin', user.isAdmin )
+        sessionStorage.setItem('Id', user.id)
         alert(user.message);
         window.location.href = "/user-page";
       });

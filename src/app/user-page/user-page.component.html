@@ -1,9 +1,18 @@
 
-  <ul>
-    <li *ngFor="let return of returns">
+  <!-- <ul class="wrapper">
+    <li class="list" *ngFor="let return of returns">
     <img src='{{return.movieImage}}' height='250px' width='250px'>
-    <button (click)="deleteItem(return.id)">Delete</button>
-    <button (click)="updateItem(return.id, return.movieImage)">Watched</button>
-    </li>
-  </ul>
+    <button mdbBtn type="button" color="indigo" class="waves-light" mdbWavesEffect (click)="deleteItem(return.id)">Delete</button>
+    <button mdbBtn type="button" color="indigo" class="waves-light" mdbWavesEffect (click)="updateItem(return.id, return.movieImage, return.url)">Watched</button>
+    <!-- <button (click)="deleteItem(return.id)">Delete</button>
+    <button (click)="updateItem(return.id, return.movieImage, return.url)">Watched</button> -->
+    <!-- </li> -->
+  <!-- </ul> --> -->
+<div class="card" *ngFor="let return of returns">
+    <img class="img" src="{{return.movieImage}}" alt="Avatar" style="width:100%">
+      <div class="container">
+          <button mdbBtn type="button" color="indigo" class="waves-light" mdbWavesEffect (click)="deleteItem(return.id)">Delete</button>
+          <button mdbBtn type="button" color="indigo" class="waves-light" mdbWavesEffect (click)="updateItem(return.id, return.movieImage, return.url)">Watched</button>
+      </div>
+  </div>
 
