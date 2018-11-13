@@ -1,6 +1,11 @@
 # MovieApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
+It communicates with a node.js server.
+
+## What it does
+
+Streamline allows you to search movies or shows, and it tells you where they are available
 
 ## Development server
 
