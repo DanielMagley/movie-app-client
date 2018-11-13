@@ -1,13 +1,21 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <label>
-    <span class="input">
-      <input type="text" formControlName='input' placeholder="Search for Show/Movie">
-      <span></span>
-    </span>
+<div class="header">
+  <div class="title">
 
-  </label>
-  <!-- <input type="submit" value="Search" class="button"> -->
-</form>
+    <h1>StreamLine Logo</h1>
+
+    <h4>Your Guide to Streaming Movies & Shows Online</h4>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      <span class="input">
+        <input type="text" formControlName='input' placeholder="Search for Show/Movie">
+        <span></span>
+      </span>
+
+    </label>
+    <!-- <input type="submit" value="Search" class="button"> -->
+  </form>
+</div>
 
 <!---------RESULTS-------------->
 <div class="wrapper">
@@ -55,8 +63,6 @@
 
   </div>
 
-
-
   <div *ngFor='let item of evenMoreItems'>
     <div class="widget">
       <img class='cover' src='{{ item.picture }}' />
@@ -76,6 +82,5 @@
         <button (click)="openDialog(item)">Watch Now</button>
 
       </div>
-      <button (click)="openDialog(item)">Watch Now</button>
     </div>
   </div>

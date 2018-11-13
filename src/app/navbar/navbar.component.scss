@@ -24,3 +24,21 @@
 //  }
 
 //  button:focus { outline: none; }
+
+.navbar {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.contianer {
+  margin-left: -20px;
+  margin-right: 0;
+}
+
+.navbar-collapse {
+  justify-self: right;
+}
+
+#otherButtons {
+  float: right;
+}
