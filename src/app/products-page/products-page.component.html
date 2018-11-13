@@ -24,7 +24,7 @@
       <img class='cover' src='{{ item.picture }}' />
       <div *ngFor="let loco of item.locations">
         <div class="mask">
-          <button class="add" (click)="watchList(item.picture, loco.url)"><i class="material-icons icon">
+          <button class="add" (click)="callBoth(item.picture, loco.url, item.name)"><i class="material-icons icon">
               playlist_add
             </i></button>
           <p>Add to List</p>
@@ -47,7 +47,7 @@
       <div *ngFor="let loco of item.locations">
         <div class="mask">
 
-          <button class="add" (click)="watchList(item.picture, loco.url)"><i class="material-icons icon">
+          <button class="add" (click)="callBoth(item.picture, loco.url, item.name)"><i class="material-icons icon">
               playlist_add
             </i></button>
           <p>Add to List</p>
@@ -68,7 +68,7 @@
       <img class='cover' src='{{ item.picture }}' />
       <div *ngFor="let loco of item.locations">
         <div class="mask">
-          <button class="add" (click)="watchList(item.picture, loco.url)"><i class="material-icons icon">
+          <button class="add" (click)="callBoth(item.picture, loco.url, item.name)"><i class="material-icons icon">
               playlist_add
             </i></button>
           <p>Add to List</p>
@@ -84,3 +84,11 @@
       </div>
     </div>
   </div>
+
+  <mat-form-field>
+    <input matInput value="Disco party!" placeholder="Message" #message>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput value="Dance" placeholder="Action" #action>
+  </mat-form-field>

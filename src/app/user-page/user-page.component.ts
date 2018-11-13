@@ -8,9 +8,10 @@ import { PageService } from "../page.service";
 })
 export class UserPageComponent implements OnInit {
   returns;
-  constructor(private service: PageService) {}
+  isClicked: boolean;
+  watched = document.getElementsByClassName("img")[0];
 
-  isClicked = false;
+  constructor(private service: PageService) {}
 
   ngOnInit() {
     this.service.getList().subscribe(data => {

@@ -7,7 +7,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DataService } from "./data.service";
 import { JwtModule } from "@auth0/angular-jwt";
-import { MatDialogModule } from "@angular/material";
+import { MatDialogModule, MatSnackBarModule } from "@angular/material";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
 // import { Carousel } from "angular-ui-carousel";
 
@@ -51,13 +51,10 @@ export function tokenGetter() {
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
-
     MDBBootstrapModule.forRoot(),
-
     MatDialogModule,
-
+    MatSnackBarModule,
     HttpClientModule,
-
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter
