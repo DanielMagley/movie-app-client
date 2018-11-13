@@ -4,7 +4,7 @@ import { DataService } from "../data.service";
 import { WatchListService } from "../watch-list.service";
 import { MatDialog, MatDialogRef } from "@angular/material";
 import { WatchNowComponent } from "../modals/watch-now/watch-now.component";
-
+import { MatSnackBar } from "@angular/material";
 @Component({
   selector: "app-products-page",
   templateUrl: "./products-page.component.html",
@@ -28,7 +28,8 @@ export class ProductsPageComponent {
   constructor(
     private service: DataService,
     private services: WatchListService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public snackBar: MatSnackBar
   ) {}
 
   ngOnInit() {}
@@ -41,7 +42,7 @@ export class ProductsPageComponent {
     this.result = this.service.getStuff(text).subscribe(data => {
       this.itemsArr = data;
       this.items = this.itemsArr.results;
-      console.log('first')
+      console.log("first");
       console.log(this.items);
     });
 
@@ -50,7 +51,7 @@ export class ProductsPageComponent {
       .subscribe(moreData => {
         this.moreResultsArr = moreData;
         this.moreItems = this.moreResultsArr.results;
-        console.log('second')
+        console.log("second");
         console.log(this.moreItems);
         //console.log(subText);
       });
@@ -60,13 +61,13 @@ export class ProductsPageComponent {
       .subscribe(evenMoreData => {
         this.evenMoreResultsArr = evenMoreData;
         this.evenMoreItems = this.evenMoreResultsArr.results;
-        console.log('third')
+        console.log("third");
         console.log(this.evenMoreItems);
       });
   }
 
   watchList(picture, url) {
-    console.log(url)
+    console.log(url);
     this.services.makeList(picture, url).subscribe(data => {
       console.log(data);
     });
@@ -76,5 +77,15 @@ export class ProductsPageComponent {
     sessionStorage.setItem("movieData", JSON.stringify(item));
     this.dialog.open(WatchNowComponent, { data: item });
     console.log(item);
+  }
+
+  openSnackBar(item) {
+    this.snackBar.open(item, "Added to List", {
+      duration: 2000
+    });
+  }
+
+  callBoth(picture, url, item) {
+    this.watchList(picture, url), this.openSnackBar(item);
   }
 }
