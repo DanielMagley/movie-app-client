@@ -1,23 +1,20 @@
 .wrapper {
     color: white;
     display: flex;
-    //flex-wrap: wrap;
-    margin: auto;
     margin-top: 10%;
     padding-right: 5%;
     padding-left: 5%;
 }
 
-.box {
-    box-shadow: 0 4px 8px 0 rgb(253, 252, 252);
+.boxes {
     transition: 0.3s;
     margin: 5px;
     width: 250px;
-    // overflow-wrap: normal;
     overflow-wrap: break-word;
+    text-align: center;
 }
 
-.box:hover {
+.boxes:hover {
     box-shadow: 0 8px 16px 0 rgb(253, 252, 252);
 }
 
@@ -35,6 +32,3 @@
     max-width: 200px;
  }
 
- .line {
-     margin: auto;
- }
