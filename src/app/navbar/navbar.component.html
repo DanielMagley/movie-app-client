@@ -5,27 +5,24 @@
     <links>
         <ul class="navbar-nav">
             <div *ngIf="!toggle; else userStuff">
-            <li class="nav-item">
-                <a class="nav-link waves-light" routerLink="/auth" mdbWavesEffect>Sign In <span class="sr-only">(current)</span></a>
-            </li>
-          </div>
-            <ng-template #userStuff>
-            <li class="nav-item">
-                <a class="nav-link waves-light" routerLink="/user-page" mdbWavesEffect>Watch List</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link waves-light" routerLink="/settings" mdbWavesEffect>Profile</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link waves-light" (click)="logout()" mdbWavesEffect>Logout</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link waves-light" (click)="adminPage()" mdbWavesEffect>Admin</a>
-            </li>
-          </ng-template>
+                <li class="nav-item">
+                    <a class="nav-link waves-light" routerLink="/auth" mdbWavesEffect>Sign In <span class="sr-only">(current)</span></a>
+                </li>
+            </div>
+            <ng-template #userStuff id="otherButtons">
+                <li class="nav-item">
+                    <a class="nav-link waves-light" routerLink="/user-page" mdbWavesEffect>Watch List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-light" routerLink="/settings" mdbWavesEffect>Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-light" (click)="logout()" mdbWavesEffect>Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-light" (click)="adminPage()" mdbWavesEffect>Admin</a>
+                </li>
+            </ng-template>
         </ul>
     </links>
 </mdb-navbar>
-
-
-
