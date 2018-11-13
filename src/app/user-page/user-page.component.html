@@ -11,19 +11,33 @@
 <h1>My Watchlist</h1>
 <div class="wrapper">
   <div class="card" *ngFor="let return of returns">
+
     <div class='buttons'>
+
       <!-- <div *ngIf="!isClicked" class="disablePhoto"> -->
-      <img class="img" src="{{return.movieImage}}" alt="Avatar" style="width:100%">
-      <!-- </div> -->
+      <div *ngIf="return.isWatched === false">
+        <img class="img" src="{{return.movieImage}}" alt="Avatar" style="width:100%">
+      </div>
+      <div *ngIf="return.isWatched === true">
+        <div>
+          <img class="img" src="{{return.movieImage}}" alt="Avatar" style="width:100%">
+          <div class="imgWatched">
+            <h5 class="pTag"><img src="../../assets/images/baseline_check_white_18dp.png">Watched</h5>
+          </div>
+        </div>
+      </div>
+
       <div class="container">
+
         <button mdbBtn type="button" color="black" class="btn btn-outline-red waves-effect" mdbWavesEffect (click)="deleteItem(return.id)"><i
             class="material-icons trash">
             delete
           </i></button>
-        <button mdbBtn type="button" color="black" class="btn btn-outline-green waves-effect" mdbWavesEffect (click)="updateItem(return.id, return.movieImage, return.url)"><i
-            class="material-icons">
+        <button mdbBtn type="button" id="watchBtn" color="black" class="btn btn-outline-green waves-effect"
+          mdbWavesEffect (click)="updateItem(return.id, return.movieImage, return.url)"><i class="material-icons">
             <span>check_circle</span>
           </i></button>
+
       </div>
     </div>
   </div>
