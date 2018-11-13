@@ -8,7 +8,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DataService } from "./data.service";
 import { JwtModule } from "@auth0/angular-jwt";
 import { MatDialogModule } from "@angular/material";
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MDBBootstrapModule } from "angular-bootstrap-md";
+// import { Carousel } from "angular-ui-carousel";
 
 //--------Components-----------
 import { AppComponent } from "./app.component";
@@ -50,6 +51,7 @@ export function tokenGetter() {
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
+
     MDBBootstrapModule.forRoot(),
 
     MatDialogModule,
@@ -72,6 +74,6 @@ export function tokenGetter() {
   ],
   bootstrap: [AppComponent],
   entryComponents: [WatchNowComponent],
-  schemas: [ NO_ERRORS_SCHEMA ]
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule {}
