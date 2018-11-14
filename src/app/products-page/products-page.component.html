@@ -25,21 +25,22 @@
 </div>
 
 <!-- -------RESULTS------------ -->
-<div *ngIf="ngOnInit() === null || undefined">
-  <div class="wrapper">
+<!-- <div *ngIf="ngOnInit() === null || undefined"> -->
+   <div class="wrapper">
     <div *ngFor="let item of moreItems">
       <div class="widget">
         <img class="cover" src="{{ item.picture }}" />
         <div *ngFor="let loco of item.locations">
-          <div class="mask">
+           <div class="mask">
             <button
               class="add"
               (click)="callBoth(item.picture, loco.url, item.name)"
             >
-              <i class="material-icons icon"> playlist_add </i>
+               <i class="material-icons icon"> playlist_add </i>
             </button>
             <p>Add to List</p>
-          </div>
+          </div> 
+        
         </div>
         <div class="description">
           <div>
@@ -48,13 +49,13 @@
           <button (click)="openDialog(item)">Watch Now</button>
         </div>
       </div>
-    </div>
+    </div> 
 
-    <div *ngFor="let item of items">
+     <div *ngFor="let item of items">
       <div class="widget">
         <img class="cover" src="{{ item.picture }}" />
         <div *ngFor="let loco of item.locations">
-          <div class="mask">
+            <div class="mask"> 
             <button
               class="add"
               (click)="callBoth(item.picture, loco.url, item.name)"
@@ -62,7 +63,8 @@
               <i class="material-icons icon"> playlist_add </i>
             </button>
             <p>Add to List</p>
-          </div>
+           </div>  
+           
         </div>
         <div class="description">
           <div>
@@ -71,21 +73,22 @@
           <button (click)="openDialog(item)">Watch Now</button>
         </div>
       </div>
-    </div>
-
+    </div> 
+ 
     <div *ngFor="let item of evenMoreItems">
       <div class="widget">
         <img class="cover" src="{{ item.picture }}" />
         <div *ngFor="let loco of item.locations">
-          <div class="mask">
+            <div class="mask">
             <button
               class="add"
               (click)="callBoth(item.picture, loco.url, item.name)"
             >
-              <i class="material-icons icon"> playlist_add </i>
+               <i class="material-icons icon"> playlist_add </i> 
             </button>
             <p>Add to List</p>
-          </div>
+           </div>  
+           
         </div>
 
         <div class="description">
@@ -95,7 +98,7 @@
           <button (click)="openDialog(item)">Watch Now</button>
         </div>
       </div>
-    </div>
+    </div> 
 
     <!--
       <mat-form-field>
@@ -107,4 +110,4 @@
       </mat-form-field>
     -->
   </div>
-</div>
+<!-- </div> -->
