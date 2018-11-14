@@ -2,7 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, FormControl } from "@angular/forms";
 import { DataService } from "../data.service";
 import { WatchListService } from "../watch-list.service";
-import { MatDialog, MatDialogRef } from "@angular/material";
+import {
+  MatDialog,
+  MatDialogRef,
+  getMatInputUnsupportedTypeError
+} from "@angular/material";
 import { WatchNowComponent } from "../modals/watch-now/watch-now.component";
 import { MatSnackBar } from "@angular/material";
 @Component({
@@ -25,6 +29,8 @@ export class ProductsPageComponent {
   addOne;
   items;
   itemsArr;
+  garflif = false;
+  alignToTop = false;
   constructor(
     private service: DataService,
     private services: WatchListService,
@@ -36,6 +42,7 @@ export class ProductsPageComponent {
 
   onSubmit() {
     let text = this.form.value.input;
+    console.log(text);
     let subText = text;
     let superSubText = text.substring(0, 1);
 
@@ -64,6 +71,9 @@ export class ProductsPageComponent {
         console.log("third");
         console.log(this.evenMoreItems);
       });
+
+    // document.querySelector("div").style.height = "50vh";
+    this.garflif = true;
   }
 
   watchList(picture, url) {
@@ -80,12 +90,18 @@ export class ProductsPageComponent {
   }
 
   openSnackBar(item) {
-    this.snackBar.open(item, "Added to List", {
-      duration: 2000
-    });
+    if (sessionStorage.getItem("token")) {
+      this.snackBar.open(item, "Was Added to List", {
+        duration: 4000
+      });
+    } else {
+      this.snackBar.open(item, `Must Sign In To Add To Watchlist`, {
+        duration: 4000
+      });
+    }
   }
 
   callBoth(picture, url, item) {
-    this.watchList(picture, url), this.openSnackBar(item);
+    this.watchList(picture, url), this.openSnackBar(item), scroll();
   }
 }
