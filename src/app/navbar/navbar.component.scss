@@ -28,6 +28,7 @@
 .navbar {
   margin-left: 0;
   margin-right: 0;
+  z-index: 1000;
 }
 
 .contianer {
@@ -41,4 +42,8 @@
 
 #otherButtons {
   float: right;
+}
+
+mdb-navbar {
+  z-index: 10;
 }
