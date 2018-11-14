@@ -11,7 +11,9 @@ export class UserPageComponent implements OnInit {
   isClicked: boolean;
   watched = document.getElementsByClassName("img")[0];
 
+
   constructor(private service: PageService) {}
+
 
   ngOnInit() {
     this.service.getList().subscribe(data => {
@@ -28,11 +30,16 @@ export class UserPageComponent implements OnInit {
   }
 
   updateItem(id, image, url) {
-    // console.log(id, image, url)
     this.service.update(id, image, url).subscribe(data => {
-      //console.log(data)
-      //alert('Marked as watched')
       this.isClicked = true;
     });
+
   }
+
+  // deletingItem(id) {
+  //   this.service.delete(id).subscribe(data => {
+  //     console.log(data);
+  //   });
+  //   window.location.href = "/user-page";
+  // }
 }

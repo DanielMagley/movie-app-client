@@ -1,11 +1,11 @@
   <div class="wrapper">
       <div class="line list">
-        <ul class="box" *ngFor="let user of users">
-            <li>User ID: {{user.id}}</li>
-            <li>First Name: {{user.firstName}}</li>
-            <li>Last Name: {{user.lastName}}</li>
-            <li>Email: {{user.userEmail}}</li>
-            <li>Admin: {{user.isAdmin}}</li>
+        <ul class="boxes" *ngFor="let user of users">
+            <li class="borders"><b>User ID:</b> {{user.id}}</li>
+            <li class="borders"><b>First Name:</b> {{user.firstName}}</li>
+            <li class="borders"><b>Last Name:</b> {{user.lastName}}</li>
+            <li class="borders"><b>Email:</b> {{user.userEmail}}</li>
+            <li class="borders"><b>Admin:</b> {{user.isAdmin}}</li>
             <button mdbBtn type="button" color="indigo" class="waves-light" mdbWavesEffect (click)="deleteUser(user.id)">Delete</button>
             <!-- <button (click)="deleteUser(user.id)">Delete</button> -->
         </ul>
