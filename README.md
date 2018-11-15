@@ -7,6 +7,12 @@ It communicates with a node.js server.
 
 Streamline allows you to search movies or shows, and it tells you where they are available
 
+## Cloning 
+
+Front end repo: https://github.com/DanielMagley/movie-app-client
+
+Back end repo: https://github.com/aureliacarlin/red-back-end
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
