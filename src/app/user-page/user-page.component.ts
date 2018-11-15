@@ -26,13 +26,19 @@ export class UserPageComponent implements OnInit {
     this.service.delete(id).subscribe(data => {
       console.log(data);
     });
-    window.location.href = "/user-page";
+    this.reload();
+   // window.location.href = "/user-page";
   }
 
   updateItem(id, image, url) {
     this.service.update(id, image, url).subscribe(data => {
       this.isClicked = true;
     });
+    this.reload();
+    //window.location.href = "/user-page";
+  }
+
+  reload() {
     window.location.href = "/user-page";
   } 
 
