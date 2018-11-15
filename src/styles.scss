@@ -22,6 +22,9 @@ body {
 .mat-dialog-container {
   // background-color: red;
   border-radius: 5%;
+  box-shadow: inset 0 0 0 3px #494949, 0 0 0 4px #494949, 3px -3px 30px #1beabd,
+    -3px 3px 30px #10abff;
+  background: linear-gradient(360deg, #1c1c1c 10%, #494949 360%);
 }
 .content {
   flex: 1 0 auto;
