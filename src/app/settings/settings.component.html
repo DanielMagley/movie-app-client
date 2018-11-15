@@ -1,41 +1,32 @@
 <div class="wrapper">
   <div class="wrappers">
-  <div class="line">
-  <!-- <span class="line"> -->
-    <div class="form">
-      <form [formGroup]='settingsForm' (ngSubmit)='onSubmit()'>
-        <label>
-          First Name
-        </label>
-          <input type='text' formControlName='firstName'>
-        <label>
-          Last Name
-        </label>
-          <input type='text' formControlName='lastName'>
-        <label>
-          Email
-        </label>
-          <input type='text' formControlName='email'>
-        <label>
-          Password
-        </label>
-          <input type='password' formControlName='password'>
-        <!-- <button type='submit'>Submit</button> -->
-        <button mdbBtn type="submit" color="indigo" class="waves-light" mdbWavesEffect>Submit</button>
-      </form>
+    <div class="line">
+      <!-- <span class="line"> -->
+      <div class="form">
+        <form [formGroup]="settingsForm" (ngSubmit)="onSubmit()">
+          <label> First Name </label>
+          <input type="text" formControlName="firstName" />
+          <label> Last Name </label>
+          <input type="text" formControlName="lastName" />
+          <label> Email </label> <input type="text" formControlName="email" />
+          <label> Password </label>
+          <input type="password" formControlName="password" />
+          <!-- <button type='submit'>Submit</button> -->
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <!-- </span> -->
     </div>
-  <!-- </span> -->
+    <div class="line list">
+      <!-- <span class="line list"> -->
+      <ul>
+        <li>{{ ids }}</li>
+        <li>{{ firsts }}</li>
+        <li>{{ lasts }}</li>
+        <li>{{ mails }}</li>
+        <li>{{ admins }}</li>
+      </ul>
+      <!-- </span> -->
+    </div>
   </div>
-  <div class="line list">
-  <!-- <span class="line list"> -->
-    <ul>
-      <li>{{ids}}</li>
-      <li>{{firsts}}</li>
-      <li>{{lasts}}</li>
-      <li>{{mails}}</li>
-      <li>{{admins}}</li>
-    </ul>
-  <!-- </span> -->
-  </div>
-</div>
 </div>

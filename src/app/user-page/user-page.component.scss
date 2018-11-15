@@ -1,15 +1,11 @@
-// .wrapper {
-//     list-style-type: none;
-//     width: 80vw;
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: center;
-//     align-items: center;
-//     background-color: black;
-//     color: black;
-//     margin: auto;
-//     margin-top: 5%;
-//   }
+@import url("https://fonts.googleapis.com/css?family=Lalezar|Muli");
+
+h1 {
+  font-family: "Lalezar", cursive;
+  text-align: center;
+  color: white;
+  margin-top: 2em;
+}
 
 .pTag {
   color: white;
@@ -55,6 +51,7 @@
   border-radius: 10%;
   background: rgba(39, 62, 84, 0.82);
   z-index: 2;
+  font-family: "Lalezar", cursive;
 }
 
 .card:hover {

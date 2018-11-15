@@ -1,34 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=Lalezar|Muli");
+
 .wrapper {
-    color: white;
-    display: flex;
-    margin-top: 10%;
-    padding-right: 5%;
-    padding-left: 5%;
+  color: white;
+  display: flex;
+  margin-top: 10%;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 .boxes {
-    transition: 0.3s;
-    margin: 5px;
-    width: 250px;
-    overflow-wrap: break-word;
-    text-align: center;
+  transition: 0.3s;
+  margin: 5px;
+  width: 250px;
+  overflow-wrap: break-word;
+  text-align: center;
 }
 
 .boxes:hover {
-    box-shadow: 0 8px 16px 0 rgb(253, 252, 252);
+  box-shadow: 0 8px 16px 0 rgb(253, 252, 252);
 }
 
- .list {
-     display: flex;
-    flex-wrap: wrap;
-    
- }
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
 
- ul {
-     list-style-type: none;
- }
+ul {
+  list-style-type: none;
+}
 
- .form {
-    max-width: 200px;
- }
-
+.form {
+  max-width: 200px;
+}

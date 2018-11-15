@@ -1,28 +1,44 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
-    <mdb-navbar-brand>
-        <a class="navbar-brand" href="">Stream Line</a>
-    </mdb-navbar-brand>
-    <links>
-        <ul class="navbar-nav links">
-            <div *ngIf="!toggle; else userStuff">
-                <li class="nav-item">
-                    <a class="nav-link waves-light" routerLink="/auth" mdbWavesEffect>Sign In <span class="sr-only">(current)</span></a>
-                </li>
-            </div>
-            <ng-template #userStuff id="otherButtons">
-                <li class="nav-item">
-                    <a class="nav-link waves-light" routerLink="/user-page" mdbWavesEffect>Watch List</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-light" routerLink="/settings" mdbWavesEffect>Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-light" (click)="logout()" mdbWavesEffect>Logout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-light" (click)="adminPage()" mdbWavesEffect>Admin</a>
-                </li>
-            </ng-template>
-        </ul>
-    </links>
+<mdb-navbar
+  SideClass="navbar navbar-expand-lg navbar-dark blue
+
+"
+>
+  <mdb-navbar-brand>
+    <a class="navbar-brand" href=""
+      ><img class="navLogo" src="../../assets/images/streamline-word.png"
+    /></a>
+  </mdb-navbar-brand>
+  <links>
+    <ul class="navbar-nav links">
+      <div *ngIf="!toggle; else: userStuff">
+        <li class="nav-item">
+          <a class="nav-link waves-light" routerLink="/auth" mdbWavesEffect
+            >Sign In <span class="sr-only">(current)</span></a
+          >
+        </li>
+      </div>
+      <ng-template #userStuff id="otherButtons">
+        <li class="nav-item">
+          <a class="nav-link waves-light" routerLink="/user-page" mdbWavesEffect
+            >Watch List</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" routerLink="/settings" mdbWavesEffect
+            >Profile</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" (click)="logout()" mdbWavesEffect
+            >Logout</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" (click)="adminPage()" mdbWavesEffect
+            >Admin</a
+          >
+        </li>
+      </ng-template>
+    </ul>
+  </links>
 </mdb-navbar>

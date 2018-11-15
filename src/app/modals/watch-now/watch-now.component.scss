@@ -1,6 +1,4 @@
-.modal {
-  color: blue;
-}
+@import url("https://fonts.googleapis.com/css?family=Lalezar|Muli");
 
 body {
   width: 300px;
@@ -12,6 +10,7 @@ body {
 h2 {
   text-align: center;
   padding-top: 0.5em;
+  font-family: "Lalezar", cursive;
 }
 
 .logos {

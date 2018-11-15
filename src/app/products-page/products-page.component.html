@@ -1,11 +1,11 @@
-<div class="header">
+<div [ngClass]="{ headerTwo: !garflif, header: garflif }">
   <!--
     <div *ngIf="!garflif">
       <img src="../../assets/images/streamlinebck-grey.jpg" />
     </div>
   -->
   <div class="title">
-    <h1>StreamLine Logo</h1>
+    <img class="logo" src="../../assets/images/SL-logo-new.png" />
 
     <h4>Your Guide to Streaming Movies & Shows Online</h4>
   </div>
