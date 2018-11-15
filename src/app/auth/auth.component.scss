@@ -1,4 +1,279 @@
-label,
+@import url("https://fonts.googleapis.com/css?family=Lalezar|Muli");
+
+.wrapper {
+  // display: flex;
+  position: relative;
+  margin: 15vh auto;
+  width: 600px;
+  height: 400px;
+  //   background: green;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 0.6px;
+  border-color: black;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.8);
+  background: linear-gradient(360deg, #1c1c1c 10%, #494949 360%);
+}
 h1 {
+  margin: 0 0 10px 0;
+  padding-top: 20px;
+  font-weight: 300;
+  font-size: 38px;
   color: white;
+  font-family: "Lalezar", cursive;
+  text-align: center;
+}
+
+.form {
+  position: absolute;
+  box-sizing: border-box;
+  align-content: center;
+  margin: auto;
+  padding: 40px;
+  width: 500px;
+  height: 500px;
+
+  ::placeholder {
+    color: white;
+  }
+  input[type="email"],
+  [type="password"] {
+    display: block;
+    box-sizing: border-box;
+    background: none;
+    margin-bottom: 20px;
+    padding: 4px;
+    width: 220px;
+    height: 32px;
+    border: none;
+    border-bottom: 2px solid #1beabd;
+    font-family: "Muli", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;
+    color: white;
+  }
+  input:focus {
+    border-bottom: 4px solid #10abff;
+    color: #10abff;
+    width: 60%;
+    transition: 0.5s ease;
+    outline: none;
+  }
+}
+
+input[type="submit"] {
+  margin-top: 28px;
+  width: 120px;
+  height: 32px;
+  background: #10abff;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  font-family: "Lalezar", cursive;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+.right {
+  position: absolute;
+  margin-top: 24px;
+  right: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 300px;
+  // height: 400px;
+  // background: url("https://goo.gl/YbktSj");
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 2px 2px 0;
+}
+
+h4 {
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 28px;
+  color: white;
+  text-align: center;
+}
+
+input[type="button"] {
+  margin-top: 18px;
+  margin-left: 3em;
+  width: 120px;
+  height: 32px;
+  background: #10abff;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  font-family: "Lalezar", cursive;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+@media (max-width: 414px) {
+  .wrapper {
+    position: relative;
+    margin: 15vh auto;
+    width: 380px;
+    height: 400px;
+    //   background: green;
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 0.6px;
+    border-color: black;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(360deg, #1c1c1c 10%, #494949 360%);
+  }
+  .form {
+    position: absolute;
+    box-sizing: border-box;
+    align-content: center;
+    margin: auto;
+    padding: 30px;
+    width: 500px;
+    height: 500px;
+
+    ::placeholder {
+      color: white;
+    }
+    input[type="text"],
+    [type="email"],
+    [type="password"] {
+      display: block;
+      box-sizing: border-box;
+      background: none;
+      margin-bottom: 20px;
+      padding: 4px;
+      width: 140px;
+      height: 32px;
+      border: none;
+      border-bottom: 2px solid #1beabd;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      transition: 0.2s ease;
+    }
+    input:focus {
+      border-bottom: 4px solid #10abff;
+      color: #10abff;
+      width: 30%;
+      transition: 0.5s ease;
+      outline: none;
+    }
+  }
+  .right {
+    position: absolute;
+    right: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 200px;
+    // height: 400px;
+    // background: url("https://goo.gl/YbktSj");
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 2px 2px 0;
+  }
+
+  input[type="button"] {
+    margin-top: 18px;
+    margin-left: 0.2em;
+    width: 120px;
+    height: 32px;
+    background: #10abff;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    font-family: "Lalezar", cursive;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.1s ease;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 414px) {
+  .wrapper {
+    position: relative;
+    margin: 15vh auto;
+    width: 380px;
+    height: 300px;
+    //   background: green;
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 0.6px;
+    border-color: black;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(360deg, #1c1c1c 10%, #494949 360%);
+  }
+  .form {
+    position: absolute;
+    box-sizing: border-box;
+    align-content: center;
+    margin: auto;
+    padding: 30px;
+    width: 500px;
+    height: 500px;
+
+    ::placeholder {
+      color: white;
+    }
+    input[type="email"],
+    [type="password"] {
+      display: block;
+      box-sizing: border-box;
+      background: none;
+      margin-bottom: 20px;
+      padding: 4px;
+      width: 140px;
+      height: 32px;
+      border: none;
+      border-bottom: 2px solid #1beabd;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      transition: 0.2s ease;
+    }
+    input:focus {
+      border-bottom: 4px solid #10abff;
+      color: #10abff;
+      width: 30%;
+      transition: 0.5s ease;
+      outline: none;
+    }
+  }
+  .right {
+    position: absolute;
+    right: 0;
+    box-sizing: border-box;
+    padding: 23px;
+    width: 200px;
+    // height: 400px;
+    // background: url("https://goo.gl/YbktSj");
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 2px 2px 0;
+  }
+
+  input[type="button"] {
+    margin-top: 18px;
+    margin-left: 0.2em;
+    width: 120px;
+    height: 32px;
+    background: #10abff;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.1s ease;
+    cursor: pointer;
+  }
 }
