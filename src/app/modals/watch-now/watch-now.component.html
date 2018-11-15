@@ -1,15 +1,15 @@
 <body>
-  <h1>Streaming On:</h1>
+  <h2><u>Streaming On</u></h2>
   <div class="logos">
     <a *ngFor="let loco of movieData.locations" href="{{loco.url}}">
-      <div *ngIf='loco.display_name == "Netflix"'>
-        <img src='../../../assets/images/netflixFull.png' />
+      <div *ngIf="loco.display_name == 'Netflix'">
+        <img src="../../../assets/images/netflix (1).png" />
       </div>
-      <div *ngIf='loco.display_name == "iTunes"'>
-        <img src='../../../assets/images/itunesFull.png' />
+      <div *ngIf="loco.display_name == 'iTunes'">
+        <img src="../../../assets/images/apple-tv (1).png" />
       </div>
-      <div *ngIf='loco.display_name == "Amazon Instant" '>
-        <img src='../../../assets/images/amazonP.png' />
+      <div *ngIf="loco.display_name == 'Amazon Instant'">
+        <img src="../../../assets/images/amazon (1).png" />
       </div>
     </a>
   </div>

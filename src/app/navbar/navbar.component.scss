@@ -1,34 +1,10 @@
-// .example-icon {
-//   padding: 0 14px;
-//   cursor: pointer;
-// }
-
-//  .example-spacer {
-//    flex: 1 1 auto;
-//  }
-
-//  .watch {
-//    float: right;
-//  }
-
-//  button.mat-menu-item {
-//     width: 150px;
-//  }
-
-// #fix {
-//   width: 100%;
-// }
-
-//   .border {
-//     border: solid 1px transparent;
-//  }
-
-//  button:focus { outline: none; }
+@import url("https://fonts.googleapis.com/css?family=Lalezar|Muli");
 
 .navbar {
   margin-left: 0;
   margin-right: 0;
   z-index: 1000;
+  font-family: "Lalezar", cursive;
 }
 
 .contianer {
@@ -44,9 +20,23 @@
   float: right;
 }
 
-mdb-navbar {
+.navbar-brand {
+  font-family: "Lalezar", cursive;
+  font-size: 24px;
+}
 
+.nav-item {
+  font-family: "Muli", sans-serif;
+}
+
+mdb-navbar {
   width: 100%;
-   position: sticky;
+  position: sticky;
   z-index: 2;
+}
+
+.navLogo {
+  height: 2.1em;
+  width: 6em;
+  margin-top: -0.2em;
 }
