@@ -33,7 +33,7 @@ export class UserPageComponent implements OnInit {
     this.service.update(id, image, url).subscribe(data => {
       this.isClicked = true;
     });
-
+    window.location.href = "/user-page";
   }
 
   // deletingItem(id) {
