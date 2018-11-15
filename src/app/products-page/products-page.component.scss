@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Russo+One");
+@import url("https://fonts.googleapis.com/css?family=Lalezar|Muli");
 
 // .garf {
 //   // background-image: url("../../assets/images/streamlinebck-grey.jpg");
@@ -6,28 +6,41 @@
 //   z-index: -10;
 // }
 
+mat-form-field {
+  font-family: "Lalezar", cursive;
+}
+
+.logo {
+  height: 18em;
+  width: 26em;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .header {
-  height: 49vh;
-  // margin-top: 50px;
+  height: 45vh;
   background-image: url("../../assets/images/streamlinebck-grey.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  // margin-bottom: 4em;
-  // opacity: 0.4;
+}
+.headerTwo {
+  height: 93vh;
+  background-image: url("../../assets/images/streamlinebck-grey.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .title {
-  top: 400px;
+  top: 300px;
   z-index: 1;
-  h1 {
-    // margin-top: 20px;
-    padding: 150px 0 0 0;
-    text-align: center;
-    color: white;
-  }
+  padding-top: 40px;
   h4 {
     text-align: center;
-    color: white;
+    color: #afafaf;
+    font-size: 34px;
+    font-family: "Lalezar", cursive;
   }
 }
 
@@ -114,12 +127,17 @@ input {
   font-family: inherit;
   line-height: inherit;
   color: #1beabd;
+  font-size: 20px;
+  font-family: "Muli", sans-serif;
   min-width: 12em;
+  justify-content: center;
   background: linear-gradient(360deg, #1c1c1c 10%, #494949 360%);
 }
 
 ::placeholder {
+  font-family: "Muli", sans-serif;
   color: white;
+  font-size: 20px;
 }
 
 html::after {
@@ -134,7 +152,7 @@ html::after {
 
 .wrapper {
   list-style-type: none;
-  width: 90vw;
+  width: 80vw;
   min-height: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -142,7 +160,7 @@ html::after {
   align-items: center;
   color: black;
   margin: auto;
-  margin-top: 4em;
+  margin-top: 5em;
 }
 
 .cover {
@@ -156,28 +174,9 @@ html::after {
   border-radius: 10% 10% 0 0;
 }
 
-// .middle {
-//   transition: 0.5s ease;
-//   opacity: 0;
-//   position: relative;
-//   margin-top: -40%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   -ms-transform: translate(-50%, -50%);
-//   text-align: center;
-//   justify-items: center;
-
-//   & .icon {
-//     margin: 0;
-//     font-size: 32px;
-//   }
-
-//   & p {
-//     margin: 0;
-//   }
-// }
-
 .widget {
+  animation-name: zoomIn;
+  animation-duration: 0.4s;
   width: 100%;
   background: none;
   color: #ddd;
@@ -187,7 +186,7 @@ html::after {
   flex-wrap: wrap;
   align-items: center;
   padding-bottom: 2em;
-  margin: 0.2em 0.2em 0.2em 0.2em;
+  margin: 0.4em 0.4em 0.4em 0.4em;
 
   flex-direction: column;
   &:hover {
@@ -214,12 +213,12 @@ html::after {
   opacity: 0;
   background-color: rgba(85, 84, 84, 0.671);
   transition: all 0.4s ease-in-out;
-  width: 328px;
+  width: 328.3px;
   height: 250px;
   position: fixed;
   overflow: hidden;
   top: -10.7px;
-  left: -10.58px;
+  left: -7.32px;
   border-radius: 10% 10% 0 0;
   &:hover {
     opacity: 1;
@@ -236,12 +235,6 @@ html::after {
   padding: 0px 20px 0px;
   text-align: center;
 }
-
-// .text {
-//   color: white;
-//   font-size: 26px;
-//   padding: 12px 12px;
-// }
 
 .add {
   color: white;
@@ -286,7 +279,7 @@ p {
   & h2 {
     font-size: 16px;
     font-weight: 400;
-    font-family: "Russo One", sans-serif;
+    font-family: "Lalezar", cursive;
     color: white;
   }
 
@@ -312,6 +305,18 @@ p {
 
 .description div {
   padding: 10px;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 414px) {

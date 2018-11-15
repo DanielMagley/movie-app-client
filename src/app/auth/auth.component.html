@@ -1,65 +1,74 @@
-<h1>Sign In</h1>
-<form [formGroup]="signInForm" (ngSubmit)="onSignInSubmit()">
+<div class="wrapper">
+  <h1>SIGN IN</h1>
+  <div class="form">
+    <form [formGroup]="signInForm" (ngSubmit)="onSignInSubmit()">
+      <input
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+        [(ngModel)]="userEmail"
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+        [(ngModel)]="password"
+      />
 
-  <label>
-    Email
-    <input type="email" formControlName="email" [(ngModel)]="userEmail">
-  </label>
-
-  <label>
-    Password
-    <input type='password' formControlName="password" [(ngModel)]="password">
-  </label>
-
-  <input type="submit" value="Submit" class="button">
-</form>
-<div>
-  <a href='/signup'>Sign Up</a>
+      <input type="submit" value="Submit" class="button" />
+    </form>
+  </div>
+  <div class="right">
+    <h4>Don't Have an Account?</h4>
+    <input
+      type="button"
+      value="Sign Up"
+      class="button"
+      onclick="window.location='/signup'"
+    />
+  </div>
 </div>
 
+<!-- -------------------VERSION 2-------------------------------- -->
+<!--
+  <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+  </button>
+  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="signInForm">
+      <form [formGroup]="signInForm">
+        <ng-template matStepLabel>Fill out your name</ng-template>
 
 
+        <mat-form-field>
+          <input matInput placeholder="First name" formControlName="firstname" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
 
 
-
-<!---------------------VERSION 2---------------------------------->
-<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-</button>
-<mat-horizontal-stepper [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="signInForm">
-    <form [formGroup]="signInForm">
-      <ng-template matStepLabel>Fill out your name</ng-template>
-
-
-      <mat-form-field>
-        <input matInput placeholder="First name" formControlName="firstname" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-
-
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill out your address</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Address" formControlName="secondCtrl" required>
-      </mat-form-field>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Fill out your address</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Address" formControlName="secondCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      You are now done.
       <div>
         <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
       </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    You are now done.
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
-  </mat-step>
-</mat-horizontal-stepper> -->
+    </mat-step>
+  </mat-horizontal-stepper>
+-->

@@ -11,9 +11,7 @@ export class UserPageComponent implements OnInit {
   isClicked: boolean;
   watched = document.getElementsByClassName("img")[0];
 
-
   constructor(private service: PageService) {}
-
 
   ngOnInit() {
     this.service.getList().subscribe(data => {
@@ -27,8 +25,10 @@ export class UserPageComponent implements OnInit {
       console.log(data);
       this.ngOnInit()
     });
-    //this.reload();
-   // window.location.href = "/user-page";
+
+    this.ngOnInit();
+    // window.location.href = "/user-page";
+
   }
 
   updateItem(id, image, url) {
@@ -36,8 +36,10 @@ export class UserPageComponent implements OnInit {
       this.isClicked = true;
       this.ngOnInit()
     });
-    //this.reload();
-    //window.location.href = "/user-page";
+
+    this.ngOnInit();
+    // window.location.href = "/user-page";
+
   }
 
   reload() {

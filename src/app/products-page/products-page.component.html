@@ -1,11 +1,11 @@
-<div class="header">
+<div [ngClass]="{ headerTwo: !garflif, header: garflif }">
   <!--
     <div *ngIf="!garflif">
       <img src="../../assets/images/streamlinebck-grey.jpg" />
     </div>
   -->
   <div class="title">
-    <h1>StreamLine Logo</h1>
+    <img class="logo" src="../../assets/images/SL-logo-new.png" />
 
     <h4>Your Guide to Streaming Movies & Shows Online</h4>
   </div>
@@ -41,12 +41,13 @@
           <p>Add to List</p>
         </div>
       </div>
-    </div>
-    <div class="description">
-      <div>
-        <h2>{{ item.name }}</h2>
+
+      <div class="description">
+        <div>
+          <h2>{{ item.name }}</h2>
+        </div>
+        <button (click)="openDialog(item)">Watch Now</button>
       </div>
-      <button (click)="openDialog(item)">Watch Now</button>
     </div>
   </div>
 
@@ -64,12 +65,13 @@
           <p>Add to List</p>
         </div>
       </div>
-    </div>
-    <div class="description">
-      <div>
-        <h2>{{ item.name }}</h2>
+
+      <div class="description">
+        <div>
+          <h2>{{ item.name }}</h2>
+        </div>
+        <button (click)="openDialog(item)">Watch Now</button>
       </div>
-      <button (click)="openDialog(item)">Watch Now</button>
     </div>
   </div>
 
@@ -87,22 +89,16 @@
           <p>Add to List</p>
         </div>
       </div>
-<<<<<<< HEAD
+
     </div>  
 
-    <!--
-      <mat-form-field>
-        <input matInput value="Disco party!" placeholder="Message" #message>
-      </mat-form-field>
-=======
-    </div>
->>>>>>> 1caed2c0887543cd0eb3b3e71ff73eb0b486e492
 
-    <div class="description">
-      <div>
-        <h2>{{ item.name }}</h2>
+      <div class="description">
+        <div>
+          <h2>{{ item.name }}</h2>
+        </div>
+        <button (click)="openDialog(item)">Watch Now</button>
       </div>
-      <button (click)="openDialog(item)">Watch Now</button>
     </div>
   </div>
 
