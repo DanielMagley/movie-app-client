@@ -25,16 +25,18 @@ export class UserPageComponent implements OnInit {
   deleteItem(id) {
     this.service.delete(id).subscribe(data => {
       console.log(data);
+      this.ngOnInit()
     });
-    this.reload();
+    //this.reload();
    // window.location.href = "/user-page";
   }
 
   updateItem(id, image, url) {
     this.service.update(id, image, url).subscribe(data => {
       this.isClicked = true;
+      this.ngOnInit()
     });
-    this.reload();
+    //this.reload();
     //window.location.href = "/user-page";
   }
 
