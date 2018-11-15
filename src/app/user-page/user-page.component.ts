@@ -34,7 +34,7 @@ export class UserPageComponent implements OnInit {
       this.isClicked = true;
     });
     window.location.href = "/user-page";
-  }
+  } 
 
   // deletingItem(id) {
   //   this.service.delete(id).subscribe(data => {
